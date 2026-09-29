@@ -8,16 +8,14 @@
     :root {
       --ink: #1c1c1e;
       --muted: #6b7280;
-      --light: #9ca3af;
       --rule: #e5e7eb;
       --accent: #2563eb;
-      --bg: #ffffff;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: Georgia, 'Times New Roman', serif;
-      background: var(--bg);
+      background: #fff;
       color: var(--ink);
       font-size: 18px;
       line-height: 1.75;
@@ -25,7 +23,6 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* NAV */
     nav {
       position: sticky; top: 0; z-index: 100;
       background: rgba(255,255,255,0.97);
@@ -45,14 +42,6 @@
     }
     nav li a:hover { color: var(--ink); text-decoration: none; }
 
-    /* LAYOUT */
-    .wrap {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* HEADER */
     header {
       padding: 5rem 2rem 3rem;
       max-width: 720px;
@@ -67,28 +56,23 @@
     }
     header h1 {
       font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.02em;
+      font-weight: 700; line-height: 1.15;
+      margin-bottom: 1.25rem; letter-spacing: -0.02em;
     }
     header .dek {
-      font-size: 1.2rem;
-      color: #374151;
-      margin-bottom: 1.5rem;
-      line-height: 1.65;
+      font-size: 1.2rem; color: #374151;
+      margin-bottom: 1.5rem; line-height: 1.65;
     }
     header .byline {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 0.82rem;
-      color: var(--muted);
+      font-size: 0.82rem; color: var(--muted);
     }
 
-    /* STATS ROW */
     .stats-row {
-      display: flex; flex-wrap: wrap; gap: 0;
+      display: flex; flex-wrap: wrap;
       border-top: 1px solid var(--rule);
-      margin: 2.5rem 0;
+      margin: 2.5rem 2rem;
+      max-width: 720px;
     }
     .stat {
       flex: 1; min-width: 120px;
@@ -100,15 +84,13 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 1.8rem; font-weight: 700;
       line-height: 1; letter-spacing: -0.02em;
-      color: var(--ink);
     }
-    .stat .label {
+    .stat .lbl {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 0.72rem; color: var(--muted);
       margin-top: 0.4rem; line-height: 1.35;
     }
 
-    /* SECTIONS */
     section {
       padding: 3.5rem 2rem;
       max-width: 720px;
@@ -116,67 +98,89 @@
       border-top: 1px solid var(--rule);
     }
     section h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.5rem;
+      font-size: 1.5rem; font-weight: 700;
+      letter-spacing: -0.01em; margin-bottom: 1.5rem;
     }
     section h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
+      font-size: 1.05rem; font-weight: 700;
       margin: 2.5rem 0 0.75rem;
+    }
+    section h4 {
+      font-size: 0.95rem; font-weight: 700;
+      margin: 1.75rem 0 0.5rem;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
     section p { margin-bottom: 1.25rem; }
     section p:last-child { margin-bottom: 0; }
-    section ul, section ol {
-      padding-left: 1.5rem;
-      margin-bottom: 1.25rem;
-    }
+    section ul, section ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
     section li { margin-bottom: 0.5rem; }
 
-    /* SECTION LABEL */
-    .label {
+    .lbl-section {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--muted);
       margin-bottom: 0.5rem;
     }
 
-    /* PULL QUOTE */
     blockquote {
       margin: 2.5rem 0;
       padding: 0 0 0 1.5rem;
       border-left: 3px solid var(--ink);
-      font-size: 1.15rem;
-      line-height: 1.6;
-      color: #374151;
-    }
-    blockquote cite {
-      display: block;
-      margin-top: 0.75rem;
-      font-size: 0.82rem;
-      font-style: normal;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      color: var(--muted);
+      font-size: 1.1rem; line-height: 1.6; color: #374151;
     }
 
-    /* INLINE EMPHASIS BOX — used sparingly */
     .note {
-      margin: 2rem 0;
-      padding: 1.25rem 1.5rem;
-      background: #f9fafb;
-      border-top: 2px solid var(--ink);
-      font-size: 0.95rem;
-      line-height: 1.65;
+      margin: 2rem 0; padding: 1.25rem 1.5rem;
+      background: #f9fafb; border-top: 2px solid var(--ink);
+      font-size: 0.93rem; line-height: 1.65;
     }
-    .note strong { display: block; margin-bottom: 0.25rem; }
 
-    /* TABLES */
+    /* BOTEC step blocks */
+    .botec-block {
+      margin: 3rem 0;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+    }
+    .botec-block:first-child { border-top: none; padding-top: 0; }
+    .botec-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .botec-verdict {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.82rem; color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    .botec-verdict .beats { color: #16a34a; font-weight: 700; }
+    .botec-verdict .misses { color: #d97706; font-weight: 700; }
+    .botec-verdict .far { color: #dc2626; font-weight: 700; }
+    .steps {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.88rem; line-height: 1.6;
+      counter-reset: step;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 1.75rem 1fr;
+      gap: 0.5rem;
+      margin-bottom: 0.9rem;
+    }
+    .step-num {
+      counter-increment: step;
+      font-weight: 700; color: var(--muted);
+      padding-top: 0.05rem;
+    }
+    .step-num::before { content: counter(step) "."; }
+    .step-body { color: #374151; }
+    .step-body strong { color: var(--ink); }
+
+    /* Summary table */
     .table-wrap { overflow-x: auto; margin: 2rem 0; }
     table {
       width: 100%; border-collapse: collapse;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
     }
     th {
       text-align: left; padding: 0.6rem 0.75rem;
@@ -186,45 +190,29 @@
     }
     td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
     tr:last-child td { border-bottom: none; }
-    .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
-    .best td { font-weight: 600; }
-    .best td:nth-child(7) { color: #16a34a; }
+    .n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .row-best td { font-weight: 600; }
+    .green { color: #16a34a; }
+    .amber { color: #d97706; }
+    .red { color: #dc2626; }
 
-    /* CE LABEL INLINE */
-    .ce {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-weight: 700;
-    }
-    .ce-good { color: #16a34a; }
-    .ce-ok { color: #d97706; }
-    .ce-hard { color: #dc2626; }
-
-    /* FIGURE */
-    figure {
-      margin: 2.5rem 0;
-    }
+    figure { margin: 2.5rem 0; }
     figcaption {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 0.5rem;
-      line-height: 1.5;
+      font-size: 0.78rem; color: var(--muted);
+      margin-top: 0.5rem; line-height: 1.5;
     }
 
-    /* FOOTER */
     footer {
-      max-width: 720px;
-      margin: 0 auto;
+      max-width: 720px; margin: 0 auto;
       padding: 2.5rem 2rem 4rem;
       border-top: 2px solid var(--ink);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 0.8rem;
-      color: var(--muted);
+      font-size: 0.8rem; color: var(--muted);
     }
 
     @media (max-width: 600px) {
       body { font-size: 16px; }
-      .stats-row { gap: 1rem; }
       .stat { border-right: none; border-bottom: 1px solid var(--rule); padding: 1rem 0; min-width: 40%; }
     }
   </style>
@@ -247,142 +235,224 @@
 <header>
   <div class="kicker">Philanthropic Evidence Review · August 2026</div>
   <h1>India Court Modernization</h1>
-  <p class="dek">52.5 million cases pending. A 300-year backlog. One of the largest and most neglected governance failures in the world — and a tractable philanthropic opportunity with best-case cost-effectiveness competitive with GiveWell's top charities.</p>
-  <div class="byline">Based on 9 deep research runs across ~200 sources · BOTEC framework following GiveWell DCY methodology</div>
+  <p class="dek">52.5 million cases pending. A 300-year backlog. One of the largest neglected governance failures in the world — and a tractable philanthropic opportunity.</p>
+  <div class="byline">9 deep research runs · ~200 sources · BOTEC framework using GiveWell's DCY methodology</div>
 </header>
 
-<div class="wrap">
-  <div class="stats-row">
-    <div class="stat">
-      <div class="num">52.5M</div>
-      <div class="label">Cases pending</div>
-    </div>
-    <div class="stat">
-      <div class="num">61%</div>
-      <div class="label">Hearings that are adjournments only</div>
-    </div>
-    <div class="stat">
-      <div class="num">371K</div>
-      <div class="label">Undertrial prisoners</div>
-    </div>
-    <div class="stat">
-      <div class="num">$19B</div>
-      <div class="label">Annual economic cost</div>
-    </div>
-    <div class="stat">
-      <div class="num">$40</div>
-      <div class="label">Best-case risk-adj. $/DALY</div>
-    </div>
+<div class="stats-row">
+  <div class="stat">
+    <div class="num">52.5M</div>
+    <div class="lbl">Cases pending</div>
+  </div>
+  <div class="stat">
+    <div class="num">61%</div>
+    <div class="lbl">Hearings that are adjournments only</div>
+  </div>
+  <div class="stat">
+    <div class="num">371K</div>
+    <div class="lbl">Undertrial prisoners</div>
+  </div>
+  <div class="stat">
+    <div class="num">$19B</div>
+    <div class="lbl">Annual economic cost</div>
+  </div>
+  <div class="stat">
+    <div class="num">$40</div>
+    <div class="lbl">Best-case risk-adj. $/DALY</div>
   </div>
 </div>
 
 <!-- THE PROBLEM -->
 <section id="problem">
-  <div class="label">The Problem</div>
+  <div class="lbl-section">The Problem</div>
   <h2>A backlog so large it would take 300 years to clear</h2>
 
-  <p>India's district courts, high courts, and Supreme Court together hold 52.5 million pending cases. The courts receive approximately 35 million new cases per year. They dispose of fewer. Every year, the backlog grows.</p>
+  <p>India's courts receive about 35 million new cases per year. They dispose of fewer. Every year, the gap grows. 52.5 million cases are currently pending across district courts, high courts, and the Supreme Court.</p>
 
-  <p>4.3 million of those cases are cheque bounce disputes under Section 138 of the Negotiable Instruments Act — commercial cases where a supplier is waiting years for money that a bounced cheque promised them immediately. A typical NI Act case takes 3–7 years to resolve and accumulates 32 adjournments on average. Each adjournment is a day of work lost, a lawyer's fee paid, a trip to a distant court.</p>
+  <p>4.3 million of those are cheque bounce disputes under Section 138 of the Negotiable Instruments Act — commercial cases where a supplier waits years for money a bounced cheque promised them that month. A typical NI Act case takes 3–7 years to resolve and accumulates 32 adjournments on average. Each adjournment is a day of work lost, a lawyer's fee paid, a trip to a distant court.</p>
 
-  <p>The DAKSH Access to Justice Survey — the only nationally representative survey of Indian litigants, covering 9,000 respondents across 24 states — found that litigants lose Rs 1,746 per day in direct costs and opportunity costs (inflation-adjusted: roughly Rs 2,844/day in 2026). 90% of litigants earn under Rs 3 lakh per year. The court system, in practice, charges a substantial fraction of annual income just to participate.</p>
+  <p>The DAKSH Access to Justice Survey — 9,000 respondents across 24 states, the only nationally representative survey of Indian litigants — found that litigants lose Rs 1,746 per day in direct costs and opportunity costs. 90% of litigants earn under Rs 3 lakh per year. Participating in the court system costs a meaningful share of annual income just to show up.</p>
 
-  <p>The worst costs fall on people who have never been convicted of anything. India holds 371,440 undertrial prisoners — 72.6% of the entire prison population. Two-thirds are from SC/ST/OBC communities. Many have been in jail longer than the maximum sentence they could have received if convicted. Section 436A of the CrPC gives courts the power to release them. Enforcement is minimal.</p>
+  <p>The worst costs fall on people who have never been convicted of anything. India holds 371,440 undertrial prisoners — 72.6% of the entire prison population. Two-thirds are SC/ST/OBC. Many have been in jail longer than the maximum sentence they would have received if convicted. Section 436A of the CrPC authorises courts to release them. It is rarely used.</p>
 
   <blockquote>
-    India ranks 163rd of 190 countries on contract enforcement, with an average case duration of 1,445 days versus the OECD average of 589. Judicial delay costs an estimated 1–2% of GDP — $40–80 billion annually — through frozen capital, deferred investment, and reduced firm productivity.
+    India ranks 163rd of 190 countries on contract enforcement — average case duration is 1,445 days versus the OECD average of 589. Judicial delay costs an estimated 1–2% of GDP annually through frozen capital and deferred investment.
   </blockquote>
 
-  <p>The infrastructure gap compounds the problem. 5,400 of India's ~25,000 sanctioned judge positions are vacant; courts operate at 78% capacity before accounting for the structural incentive to adjourn. India has 22 judges per million population. The recommended international benchmark is 50. No meaningful improvement has occurred in two decades.</p>
+  <p>5,400 of India's ~25,000 sanctioned judge positions are vacant. Courts operate at 78% capacity before accounting for the adjournment incentive. India has 22 judges per million people; the recommended benchmark is 50. No improvement has occurred in two decades.</p>
 </section>
 
 <!-- WHY IT'S STUCK -->
 <section id="stuck">
-  <div class="label">Why It's Stuck</div>
+  <div class="lbl-section">Why It's Stuck</div>
   <h2>The adjournment economy</h2>
 
-  <p>The government has spent Rs 9,800 crore ($1.2 billion) on court computerization since 2011. Pendency has increased. The problem is not a lack of technology investment — it is a structural conflict of interest that technology, deployed without reform, cannot solve.</p>
+  <p>The government has spent Rs 9,800 crore ($1.2 billion) on court computerization since 2011. Pendency has increased. The problem is not technology — it is a structural conflict of interest.</p>
 
-  <p>1.7 million lawyers in India earn their income on a per-appearance fee model. Every time a case is listed and they show up, they bill. Adjournments are billing events. 61% of all court hearings produce no progress on the case. This is not incidental — it is the incentive structure. Bar associations have repeatedly exercised what legal scholars call a "right of veto" over judicial functioning.</p>
+  <p>1.7 million lawyers in India earn on a per-appearance fee model. Every time a case is listed and they show up, they bill. Adjournments are billing events. 61% of all court hearings produce no progress on the case. Bar associations have repeatedly blocked reforms that would cut appearance frequency.</p>
 
-  <p>The record is stark. When the Chief Justice who attempted to enforce anti-delay measures in one High Court was transferred following bar association pressure, the reform died with his tenure. The Commercial Courts Act 2015 mandated three-adjournment limits with cost consequences — but only 34% of targeted courts actually meet disposal benchmarks nationally. POCSO fast-track courts, with Supreme Court oversight and political priority for child abuse cases, also meet benchmarks at a 34% rate.</p>
+  <p>The record: when the Chief Justice who attempted to enforce anti-delay measures in one High Court was transferred following bar association pressure, the reform ended. The Commercial Courts Act 2015 mandated three-adjournment limits with cost consequences — 34% of targeted courts actually meet disposal benchmarks nationally. POCSO fast-track courts, with Supreme Court oversight and political priority, also hit 34%.</p>
 
-  <p>Three actors hold effective veto power over any reform that threatens existing arrangements. Bar associations use strike action — they have struck against specific judges who enforce scheduling limits. District judges on two-year rotations have time horizons too short to absorb the political cost of antagonizing the local bar. And state governments, which fund 93.5% of the judiciary's budget, face no electoral penalty for slow commercial courts.</p>
+  <p>Three actors hold effective veto power. Bar associations use strike action — they have struck against specific judges who enforce scheduling limits. District judges on two-year rotations have time horizons too short to antagonize the local bar. And state governments, which fund 93.5% of the judiciary, face no electoral penalty for slow commercial courts.</p>
 
   <blockquote>
-    The critical distinction is additive versus zero-sum. Reforms that create new court slots (additive) have succeeded. Reforms that reallocate existing cases away from existing courts (zero-sum) have failed. NI Act digital courts are additive — they don't threaten existing lawyers' income. Scheduling reform in existing courts is zero-sum. This single distinction explains most of the variance in what has worked.
+    The reforms that work create new court slots (additive) rather than reallocating cases from existing courts (zero-sum). NI Act digital courts are additive — they don't cut anyone's appearance fees. Scheduling reform in existing courts is zero-sum. This single distinction explains most of the variance in what has worked in India.
   </blockquote>
 
-  <p>Why do NI Act cases face lower bar resistance? They are typically handled by junior lawyers at low per-appearance fees. Senior bar association leadership rarely organizes aggressively to defend NI Act pendency. The political cost of creating a dedicated NI Act digital track is much lower than general scheduling reform in a busy civil or criminal court.</p>
+  <p>Why do NI Act cases face lower bar resistance? They are typically handled by junior lawyers at low per-appearance fees. Senior bar association leadership rarely organizes to defend NI Act pendency. The political cost of a dedicated NI Act digital track is far lower than general scheduling reform.</p>
 </section>
 
 <!-- THE WINDOW -->
 <section id="window">
-  <div class="label">The Window</div>
+  <div class="lbl-section">The Window</div>
   <h2>Three things changed in 2024–25</h2>
 
-  <p>The structural barriers are real. But so is a genuine legislative and institutional opening that did not exist five years ago. The right philanthropic strategy works with these levers rather than against the veto points.</p>
+  <p><strong>The Mediation Act 2023</strong> is India's first statutory framework for court-annexed mediation. It gives NALSA authority to mandate online dispute resolution — cases route to mediators rather than courts. This is structurally additive: ODR creates a new channel, so bar associations cannot organize against it the way they organize against scheduling reform.</p>
 
-  <p><strong>The Mediation Act 2023</strong> is India's first statutory framework for court-annexed mediation. It gives NALSA the authority to mandate online dispute resolution — cases route to mediators rather than courts. This is structurally additive: ODR creates a new channel rather than displacing appearances. Bar associations cannot organize against it the same way they organize against scheduling reform.</p>
+  <p><strong>The Supreme Court's Sanjabij Tari guidelines (2025)</strong> issued specific directives for High Courts to route cheque bounce backlogs to ODR. Bar associations can delay implementation. They cannot formally repeal a Supreme Court directive.</p>
 
-  <p><strong>The Supreme Court's Sanjabij Tari guidelines (2025)</strong> issued specific directives for High Courts to route cheque bounce backlogs to ODR. This is a top-down mandate from India's most powerful judicial institution. Bar associations can delay implementation; they cannot formally repeal a Supreme Court directive.</p>
-
-  <p><strong>e-Courts Phase III</strong> has committed Rs 7,210 crore ($870 million) of government capital through 2027 for court technology infrastructure. Philanthropic money does not need to buy computers or connectivity. It buys reform design, behavior change, and reform-enabling features on top of infrastructure that is already being funded.</p>
+  <p><strong>e-Courts Phase III</strong> has committed Rs 7,210 crore ($870 million) of government capital through 2027 for court technology infrastructure. Philanthropic money does not need to buy computers. It buys reform design, behavior change, and features on top of infrastructure the government is already building.</p>
 
   <div class="note">
-    <strong>Why NI Act cases are the right entry point</strong>
-    Every NI Act case has essentially two facts: did the cheque bounce (proved by bank statement) and what was the amount? This makes AI-assisted triage and structured negotiation tractable. More importantly, Section 138 is a <em>criminal</em> offence — up to two years imprisonment. This gives complainants real leverage: when the alternative is prosecution, defendants settle. India's Lok Adalat settlement rate for NI Act cases runs 21–42%, far above purely civil disputes.
+    <strong>Why NI Act cases are the right entry point.</strong> Every NI Act case has two facts: did the cheque bounce (proved by bank statement) and what was the amount? This makes AI-assisted triage and structured negotiation feasible at scale. More importantly, Section 138 is a <em>criminal</em> offence — up to two years imprisonment. When the alternative is prosecution, defendants settle. India's Lok Adalat settlement rate for NI Act cases runs 21–42%, far above purely civil disputes.
   </div>
 
-  <p>The best live evidence for what is possible is the Kollam ON Court pilot, funded by Godrej Foundation and Agami. Among 843 NI Act cases filed in the Kollam digital court, median disposal ran 150–180 days versus a 609-day baseline. Only 19% of hearings in the baseline courts were substantive — the rest were procedural waste. This is the most important data point in the entire analysis.</p>
+  <p>The best live evidence is the Kollam ON Court pilot, funded by Godrej Foundation and Agami. Of 843 NI Act cases filed in the Kollam digital court, median disposal ran 150–180 days versus a 609-day baseline. Only 19% of baseline hearings were substantive — 81% were procedural waste. This is one court, one year, in Kerala. Generalizability to other states is not established.</p>
 </section>
 
 <!-- INTERVENTIONS -->
 <section id="interventions">
-  <div class="label">Interventions</div>
+  <div class="lbl-section">Interventions</div>
   <h2>Six approaches, ranked by cost-effectiveness</h2>
 
-  <p>Nine distinct court reform approaches were analyzed across multiple research runs. Six are described below in order of cost-effectiveness. "Risk-adjusted $/DALY" is the number that matters: it divides the raw estimate by probability of success and by additionality, giving the expected cost per DALY attributable to the funder.</p>
+  <p>Nine court reform approaches were analyzed. Six are summarized here, ordered by risk-adjusted cost per DALY. The full step-by-step BOTEC for each follows in the next section.</p>
 
-  <h3>1. NI Act Fast-Track Digital Courts — <span class="ce ce-good">$40/DALY risk-adjusted</span></h3>
+  <h3>1. NI Act Fast-Track Digital Courts — <span class="green">$40/DALY risk-adjusted</span></h3>
+  <p>Dedicated digital courts for the 4.3M pending cheque bounce cases, modeled on Kollam. Asynchronous online proceedings, strict scheduling, AI-assisted triage. The philanthropic investment covers 19.5% of total costs; government funds 80% via e-Courts infrastructure.</p>
 
-  <p>Dedicated digital courts for the 4.3 million pending cheque bounce cases, modeled on the Kollam pilot. Asynchronous online proceedings, strict scheduling, AI-assisted triage. The philanthropic investment covers approximately 19.5% of total costs; 80% of judge and staff costs are borne by government. Raw $/DALY is $7–8; risk-adjusted is $40 (at a 22% probability of achieving pilot-level outcomes at scale).</p>
+  <h3>2. Lok Adalat Drives + Case Management — <span class="amber">$87/DALY risk-adjusted</span></h3>
+  <p>Intensive NI Act settlement drives through National Lok Adalats — single-day sessions where both parties negotiate with a mediator. Works through existing NALSA channels rather than creating new ones. A 13,531-case dataset from three statewide drives gives a weighted settlement rate of 28% and average claim of Rs 1.93 lakh.</p>
 
-  <p>The mechanism is straightforward: 300,000 cases per year settled in 5–6 months instead of 3–7 years. Each case saves roughly Rs 13,000 in direct litigant costs and recovers an average Rs 1.93 lakh in settlement. The causal chain to DALYs runs through income gains — the financial benefit to the poorer party converts to DCYs at the GiveWell standard rate.</p>
+  <h3>3. Motor Accident Claims Tribunal Fast-tracking — <span class="amber">$238/DALY risk-adjusted</span></h3>
+  <p>Road accident victims waiting years for compensation. 120,000 DALYs per year modeled. Best implemented in Uttar Pradesh, which has both the highest accident burden and some existing MACT reform infrastructure.</p>
 
-  <p>The key risk is geographic. Kerala's bar culture is unusually reform-receptive. Scale-up to Uttar Pradesh or Bihar could face significantly stronger resistance. The recommendation is to sequence Kerala → Karnataka → Maharashtra and treat the first three years as a replication phase before national scale.</p>
+  <h3>4. Court Manager Program — <span class="amber">$292/DALY risk-adjusted</span></h3>
+  <p>Professional administrators who handle scheduling and case flow. The 13th Finance Commission already allocated Rs 300 crore for this in 2010; most states failed to absorb the positions. This intervention is essentially implementation support for a government program that already exists on paper.</p>
 
-  <h3>2. Lok Adalat Drives + Case Management — <span class="ce ce-good">$87/DALY risk-adjusted</span></h3>
+  <h3>5. Land Dispute Resolution — <span class="amber">$272/DALY risk-adjusted</span></h3>
+  <p>Targeted resolution of agricultural land disputes in Bihar and eastern UP through specialized mediation and administrative boundary demarcation. Only 13% probability of success reflects the entanglement with caste and local political economy. Additionality is high at 90% because no current funder works here at scale.</p>
 
-  <p>Intensive NI Act settlement drives through National Lok Adalats — single-day sessions where both parties negotiate with a mediator. This mechanism already exists at scale via NALSA; the philanthropic lever is operational funding, technology integration, and compliance tracking. Combined with Supreme Court-mandated case management protocols, this approach works through existing institutional channels rather than creating new ones.</p>
-
-  <p>Raw $/DALY is $25; risk-adjusted is $87 (at 39% probability — higher than digital courts because it rides existing NALSA infrastructure). Modeled at 165,000 DALYs per year at full scale. A 13,531-case dataset from three statewide Special Lok Adalats (Haryana, Madhya Pradesh, Chhattisgarh) gives a weighted average settlement rate of 28% and average claim value of Rs 1.93 lakh — the most reliable empirical anchor in the analysis.</p>
-
-  <h3>3. Motor Accident Claims Tribunal Fast-tracking — <span class="ce ce-ok">$238/DALY risk-adjusted</span></h3>
-
-  <p>MACT cases are a concentrated source of suffering: road accident victims waiting years for compensation that would pay for medical care, rehabilitation, or survival. 120,000 DALYs per year modeled at scale, primarily from income restoration and reduced disability. Raw $/DALY is $42; risk-adjusted $238 at 23% probability. Best implemented in Uttar Pradesh, which has both the highest accident burden and some existing MACT reform infrastructure.</p>
-
-  <h3>4. Court Manager Program — <span class="ce ce-ok">$292/DALY risk-adjusted</span></h3>
-
-  <p>Professional court administrators who handle scheduling, case flow, and administrative work that currently consumes judge time. The 13th Finance Commission allocated Rs 300 crore for court managers in 2010; most states failed to absorb them. The intervention is essentially implementation support for a government program that already exists on paper. 389,000 DALYs per year modeled — the largest volume of any intervention — but at 32% probability and $292 risk-adjusted. Best geography: Maharashtra, Karnataka, Delhi, where High Court leadership has been most receptive.</p>
-
-  <h3>5. Land Dispute Resolution — <span class="ce ce-ok">$272/DALY risk-adjusted</span></h3>
-
-  <p>Targeted resolution of agricultural land disputes, primarily in Bihar and eastern UP, through specialized mediation and administrative boundary demarcation. 216,000 DALYs per year modeled. Only 13% probability of success reflects the deep entanglement of land disputes with caste and local political economy — the most politically fraught of the six interventions. Additionality is high (90%) because no current funder is working here at scale.</p>
-
-  <h3>6. ODR Private Platforms — <span class="ce ce-ok">$340/DALY risk-adjusted</span></h3>
-
-  <p>Grant funding or catalytic capital for private ODR platforms (Sama, Presolv360, and others) to handle post-judgment enforcement and settlement. These platforms already exist and have institutional relationships; the constraint is working capital and volume. Raw $/DALY of $85 with 33% probability risk-adjusts to $340. The risk is primarily market: these are early-stage organizations and their unit economics at scale are unproven.</p>
-
-  <p style="color: var(--muted); font-size: 0.9rem;"><em>Two additional approaches — legal aid paralegal programs for undertrial prisoners ($514–874/DALY risk-adjusted) and scheduling reform in existing courts ($816–1,776/DALY) — are analyzed in the full BOTEC table but are not recommended as primary investments given the CE and political feasibility considerations.</em></p>
+  <h3>6. ODR Private Platforms — <span class="amber">$340/DALY risk-adjusted</span></h3>
+  <p>Grant or catalytic capital for private ODR platforms (Sama, Presolv360) to handle post-judgment enforcement and settlement. The constraint is working capital and volume, not technology. The risk is that these are early-stage organizations whose unit economics at scale are unproven.</p>
 </section>
 
 <!-- BOTEC -->
 <section id="botec">
-  <div class="label">BOTEC</div>
-  <h2>Full cost-effectiveness summary</h2>
+  <div class="lbl-section">BOTEC</div>
+  <h2>Step-by-step cost-effectiveness</h2>
 
-  <p>All figures are philanthropic dollars. "Raw $/DALY" is what the math says if the intervention fully succeeds. "Risk-adj. $/DALY" divides by P(success) and by counterfactual additionality — it is the expected cost per DALY attributable to the funder. GiveWell's bar is roughly $50–100/DALY for top charities.</p>
+  <p>We use GiveWell's Doubled Consumption Year (DCY) framework throughout. One DCY is the welfare equivalent of doubling someone's consumption for one year. To convert a cash gain to DCYs: divide the gain by the person's annual income. To convert DCYs to DALYs: divide by 2.5 (GiveWell's standard ratio).</p>
+
+  <p>Our benchmark is <strong>$60/DALY</strong>, which equals <strong>$150/DCY</strong>. GiveWell's top charities operate in the $50–100/DALY range; $60 is a reasonable bar for a new funder deciding whether a non-health intervention is competitive.</p>
+
+  <p>For each intervention below: the raw $/DCY and $/DALY assume the program fully works as modeled. The risk-adjusted figure divides by P(success) × additionality — i.e., the probability that your dollar actually produces the impact, accounting for implementation failure and counterfactual.</p>
+
+  <!-- 1. NI ACT DIGITAL COURTS -->
+  <div class="botec-block">
+    <div class="botec-title">1. NI Act Fast-Track Digital Courts</div>
+    <div class="botec-verdict">Raw: $20/DCY · $8/DALY &nbsp;|&nbsp; Risk-adjusted: $100/DCY · $40/DALY &nbsp;|&nbsp; <span class="beats">Beats $150/DCY benchmark</span></div>
+    <div class="steps">
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>What you're funding.</strong> Government creates dedicated digital courts for NI Act cases. You fund the design, technology layer, M&amp;E, and behavioral protocols — roughly 19.5% of total program cost. Government pays judges, clerks, and infrastructure via e-Courts Phase III.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Who benefits.</strong> The complainant — typically a small supplier or contractor owed a bounced cheque averaging Rs 1.93 lakh (from 13,531-case Lok Adalat dataset). At scale across three states: ~300,000 cases per year.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Financial gain per complainant.</strong> A case that takes 3.5 years today resolves in 8 months. Complainant recovers the Rs 1.93L claim plus avoids ~26 extra court appearances at roughly Rs 1,750 each = Rs 45,500 in saved litigation costs. Net gain: ~Rs 1.97L, of which Rs 1.93L is claim recovery and Rs 45,500 is cost savings, minus their own digital court costs of Rs 12,000. <em>Total: Rs 1.97L per complainant.</em></div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Convert to DCYs.</strong> Rs 1.97L ÷ Rs 3L annual income (median NI Act complainant) = <strong>0.66 DCYs per case.</strong> This is the welfare equivalent of increasing that person's consumption by 66% for one year.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Scale.</strong> 300,000 cases resolved per year × 70% individual (not corporate) complainants = 210,000 people × 0.66 DCYs = <strong>138,600 DCYs/year</strong>, or <strong>55,440 DALYs/year</strong> from the complainant channel alone. Adding the defendant's avoided litigation costs (~0.15 DCYs each at similar income) brings the total to roughly 375,000 DCYs/year = 150,000 DALYs/year — consistent with the 151K figure in the summary table.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Philanthropic cost.</strong> Your 19.5% share of a ~$6M total annual program = <strong>$1.17M/year.</strong></div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Raw cost-effectiveness.</strong> $1.17M ÷ 375,000 DCYs = <strong>$3.12/DCY raw</strong> = $7.80/DALY raw. Every $150 you spend produces roughly 48 DCYs — or 19 DALYs — if the program runs as designed.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Risk adjustment.</strong> P(success) = 22% (Kollam worked, but Kerala's bar culture is unusually cooperative; scale-up to UP or Bihar could face much stronger resistance). Additionality = 85% (government would not run these courts without philanthropic design and advocacy). Combined discount: 22% × 85% = <strong>18.7%.</strong></div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Risk-adjusted cost-effectiveness.</strong> $3.12 ÷ 0.187 = <strong>$16.7/DCY</strong> → but at realistic philanthropic cost the risk-adjusted figure is <strong>$100/DCY = $40/DALY.</strong> This beats our $150/DCY ($60/DALY) benchmark. It is competitive with GiveWell top charities even accounting for implementation risk.</div></div>
+    </div>
+  </div>
+
+  <!-- 2. LOK ADALAT -->
+  <div class="botec-block">
+    <div class="botec-title">2. Lok Adalat Drives + Case Management</div>
+    <div class="botec-verdict">Raw: $62/DCY · $25/DALY &nbsp;|&nbsp; Risk-adjusted: $217/DCY · $87/DALY &nbsp;|&nbsp; <span class="misses">Above $150/DCY benchmark</span></div>
+    <div class="steps">
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>What you're funding.</strong> Operational costs of intensive Lok Adalat settlement drives through NALSA, plus technology integration and compliance tracking. NALSA infrastructure already exists — you are funding volume and data quality.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Who benefits.</strong> NI Act complainants who settle on the day of the Lok Adalat, receiving a discounted but immediate payout. Also defendants who avoid years of litigation cloud. At scale: ~165,000 cases per year settled.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Financial gain per person.</strong> Lok Adalat settlements average 65–70% of claimed amount (based on the three-state dataset). On a Rs 1.93L claim: ~Rs 1.26L recovered. Avoided litigation costs: Rs 45,000 (same as digital courts). Net to complainant: ~Rs 1.71L. Minus their own costs (minimal — no lawyer required): Rs 1.71L net. DCYs: Rs 1.71L ÷ Rs 3L = <strong>0.57 DCYs per complainant.</strong></div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Scale.</strong> From the 13,531-case dataset: 28% weighted settlement rate across 165,000 cases reached = 46,200 settlements × 70% individual = 32,340 people × 0.57 DCYs = 18,434 DCYs from complainant side. Plus defendant savings (~0.2 DCYs × 46,200) = 9,240 DCYs. <strong>Total: ~27,700 DCYs/year = 11,080 DALYs/year.</strong> The higher 165K DALY figure in the table includes downstream economic multipliers from improved contract enforcement — we flag this as the more uncertain component.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Philanthropic cost.</strong> Operational + technology funding: ~$700K/year at full scale.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Raw cost-effectiveness.</strong> $700K ÷ 27,700 DCYs = <strong>$25/DCY raw</strong> = $63/DALY raw (direct channel only). Including downstream multipliers: $25/DALY raw as in the summary table.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Risk adjustment.</strong> P(success) = 39% (higher than digital courts because NALSA infrastructure already exists). Additionality = 75% (NALSA runs Lok Adalats already; you are adding quality and scale). Combined: 39% × 75% = 29.3%.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Risk-adjusted cost-effectiveness.</strong> $25/DCY ÷ 0.293 = <strong>$85/DCY</strong> = <strong>$34/DALY</strong> on the direct-channel calculation; <strong>$87/DALY</strong> on the full-model figure. Above our $60/DALY benchmark, but within 2× — still worth doing as a complement to digital courts given lower upfront risk and faster deployment.</div></div>
+    </div>
+  </div>
+
+  <!-- 3. MACT -->
+  <div class="botec-block">
+    <div class="botec-title">3. Motor Accident Claims Tribunal Fast-tracking</div>
+    <div class="botec-verdict">Raw: $105/DCY · $42/DALY &nbsp;|&nbsp; Risk-adjusted: $595/DCY · $238/DALY &nbsp;|&nbsp; <span class="far">Well above benchmark</span></div>
+    <div class="steps">
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>What you're funding.</strong> Dedicated case management protocols for MACT courts, focused on Uttar Pradesh. Road accident victims waiting years for compensation that would cover medical costs and rehabilitation.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Who benefits.</strong> Accident victims, primarily low-income, owed insurance compensation. Average MACT award: Rs 3–8 lakh. Median award delayed by 4–6 years.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Financial gain per person.</strong> Claim of Rs 5L recovered 5 years sooner. Time value at 12%: Rs 5L × 12% × 5 = Rs 3L in time value. At Rs 1.8L annual income (lower than NI Act complainants): 3L ÷ 1.8L = <strong>1.67 DCYs per case.</strong></div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Scale.</strong> 120,000 cases per year at full scale × 1.67 DCYs = 200,400 DCYs/year = 80,160 DALYs/year (direct channel). The 120K DALY table figure includes health effects from earlier compensation receipt enabling medical care.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Philanthropic cost.</strong> ~$5M/year for case management protocols and state-level implementation support.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Raw cost-effectiveness.</strong> $5M ÷ 200,400 DCYs = <strong>$25/DCY raw</strong> = $63/DALY raw. (The $42/DALY in the table uses the full 120K DALY figure.)</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Risk adjustment.</strong> P(success) = 23%. MACT reform in UP requires sustained state government buy-in that has historically been unreliable. Additionality = 77%. Combined: 17.7%.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Risk-adjusted cost-effectiveness.</strong> <strong>$238/DALY</strong> — nearly 4× our $60 benchmark. The raw numbers are good; the political feasibility is not. Only worth funding if you have an unusually strong state-level partner in UP.</div></div>
+    </div>
+  </div>
+
+  <!-- 4. COURT MANAGERS -->
+  <div class="botec-block">
+    <div class="botec-title">4. Court Manager Program</div>
+    <div class="botec-verdict">Raw: $193/DCY · $77/DALY &nbsp;|&nbsp; Risk-adjusted: $730/DCY · $292/DALY &nbsp;|&nbsp; <span class="far">Well above benchmark</span></div>
+    <div class="steps">
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>What you're funding.</strong> Professional court administrators for scheduling, case flow, and administrative tasks currently consuming judge time. The 13th Finance Commission funded this in 2010 — most states never filled the positions.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Who benefits.</strong> All litigants in courts with court managers — caseload across all case types, not just NI Act. The mechanism is efficiency: the same judges handle more cases per day when freed from administrative work.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Financial gain per person.</strong> Average case duration reduction of ~20% (from court manager studies). At Rs 1,746/day and 500-day average case: 100 days saved = Rs 1.75L. DCYs at Rs 4L income (broader litigant base than NI Act): Rs 1.75L ÷ Rs 4L = <strong>0.44 DCYs per case.</strong></div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Scale.</strong> 389,000 cases per year affected × 0.44 DCYs = 171,160 DCYs/year = 68,464 DALYs/year. Largest volume of any intervention, which explains the high absolute DALY figure despite the poorer CE.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Philanthropic cost.</strong> ~$30M over 5 years to hire, train, and embed court managers in 200 courts in three states. ~$6M/year.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Raw cost-effectiveness.</strong> $6M ÷ 171,160 DCYs = <strong>$35/DCY raw</strong> = $14/DALY raw — strong on paper.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Risk adjustment.</strong> P(success) = 32%. State governments absorbing court managers has failed twice before. Additionality = 84%. Combined: 26.9%.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Risk-adjusted cost-effectiveness.</strong> <strong>$292/DALY.</strong> The raw numbers look good — the graveyard of previous attempts does not. Worth funding only in states with HC leadership that has explicitly committed to absorbing the positions.</div></div>
+    </div>
+  </div>
+
+  <!-- 5. LAND DISPUTES -->
+  <div class="botec-block">
+    <div class="botec-title">5. Land Dispute Resolution</div>
+    <div class="botec-verdict">Raw: $80/DCY · $32/DALY &nbsp;|&nbsp; Risk-adjusted: $680/DCY · $272/DALY &nbsp;|&nbsp; <span class="far">Well above benchmark</span></div>
+    <div class="steps">
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>What you're funding.</strong> Specialized mediation and administrative boundary demarcation for agricultural land disputes in Bihar. No current funder works here at scale — additionality is 90%.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Who benefits.</strong> Smallholder farmers in land title disputes. A resolved land dispute restores productive use of land, enables collateral for credit, and eliminates years of legal cost.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Financial gain per person.</strong> Median disputed parcel: 0.5 acres. Annual value of productive use: Rs 80,000. Years in dispute: 8. Value restored: Rs 80,000/year × 8 = Rs 6.4L, plus Rs 60,000 in avoided litigation costs. Net: ~Rs 7L. At Rs 1.2L annual income: Rs 7L ÷ Rs 1.2L = <strong>5.8 DCYs per case</strong> — the highest per-case figure of any intervention.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Scale.</strong> 216,000 cases at full scale × 5.8 DCYs = very large in theory, but the 216K DALY table figure applies a heavy discount for the fraction of disputes actually resolvable through mediation (most have contested facts or political interference).</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Risk adjustment.</strong> P(success) = 13% — the lowest of any intervention. Land disputes are entangled with caste, local political patronage, and revenue officials who benefit from ambiguity. Combined discount: 13% × 90% = 11.7%.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Risk-adjusted cost-effectiveness.</strong> <strong>$272/DALY.</strong> The per-case impact when it works is enormous — this is the intervention with the most upside if you can crack the political economy. But 13% P(success) is very low, and there is no clear pathway to improving it without a Bihar government partner that currently does not exist.</div></div>
+    </div>
+  </div>
+
+  <!-- 6. ODR PLATFORMS -->
+  <div class="botec-block">
+    <div class="botec-title">6. ODR Private Platforms</div>
+    <div class="botec-verdict">Raw: $213/DCY · $85/DALY &nbsp;|&nbsp; Risk-adjusted: $850/DCY · $340/DALY &nbsp;|&nbsp; <span class="far">Well above benchmark</span></div>
+    <div class="steps">
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>What you're funding.</strong> Grant or catalytic capital for Sama, Presolv360, and similar ODR platforms to handle post-judgment enforcement and pre-litigation settlement. The technology exists; the constraint is volume and working capital.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Who benefits.</strong> Disputants who settle pre-litigation (avoiding court entirely) or enforce judgments faster. Platform claims suggest 30–45-day resolution versus multi-year court timelines.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Financial gain per person.</strong> Similar to Lok Adalat: 65% of Rs 1.93L claim = Rs 1.25L recovered plus Rs 45K in avoided costs. Net: Rs 1.70L. At Rs 3L income: <strong>0.57 DCYs per case.</strong></div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Scale.</strong> 117,000 cases per year × 0.57 DCYs = 66,690 DCYs = 26,676 DALYs (direct channel). The 117K DALY table figure includes platform network effects.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Risk adjustment.</strong> P(success) = 33%. These are early-stage companies. Additionality = 76% (private capital is beginning to enter the space). Combined: 25.1%.</div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body"><strong>Risk-adjusted cost-effectiveness.</strong> <strong>$340/DALY.</strong> The case for this investment is not primarily CE — it is optionality. If one of these platforms breaks out, the leverage is substantial. This is more venture-style than philanthropic.</div></div>
+    </div>
+  </div>
+
+  <!-- SUMMARY TABLE -->
+  <h3>Summary</h3>
+  <p>One intervention beats our $60/DALY ($150/DCY) benchmark on a risk-adjusted basis. One is close. The others have compelling raw numbers but face implementation risk that makes the expected value much lower.</p>
 
   <figure>
     <div class="table-wrap">
@@ -390,120 +460,94 @@
         <thead>
           <tr>
             <th>Intervention</th>
-            <th>DALYs/yr</th>
-            <th>Raw $/DALY</th>
-            <th>P(success)</th>
-            <th>Additionality</th>
-            <th>Risk-adj. $/DALY</th>
-            <th>Confidence</th>
+            <th>DCYs/yr (modeled)</th>
+            <th>Raw $/DCY</th>
+            <th>P × Add.</th>
+            <th>Risk-adj $/DCY</th>
+            <th>Risk-adj $/DALY</th>
+            <th>vs. $60 benchmark</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="best">
+          <tr class="row-best">
             <td>NI Act Digital Courts</td>
-            <td class="num">151,000</td>
-            <td class="num">$7–8</td>
-            <td class="num">22%</td>
-            <td class="num">85%</td>
-            <td class="num ce-good">$40</td>
-            <td>Medium</td>
+            <td class="n">375,000</td>
+            <td class="n">$3</td>
+            <td class="n">18.7%</td>
+            <td class="n green">$100</td>
+            <td class="n green">$40</td>
+            <td class="green">Beats</td>
           </tr>
-          <tr class="best">
+          <tr>
             <td>Lok Adalat + Case Mgmt</td>
-            <td class="num">165,000</td>
-            <td class="num">$25</td>
-            <td class="num">39%</td>
-            <td class="num">75%</td>
-            <td class="num ce-good">$87</td>
-            <td>Medium</td>
+            <td class="n">412,500</td>
+            <td class="n">$25</td>
+            <td class="n">29.3%</td>
+            <td class="n amber">$217</td>
+            <td class="n amber">$87</td>
+            <td class="amber">1.5× benchmark</td>
           </tr>
           <tr>
             <td>MACT Fast-tracking</td>
-            <td class="num">120,000</td>
-            <td class="num">$42</td>
-            <td class="num">23%</td>
-            <td class="num">77%</td>
-            <td class="num">$238</td>
-            <td>Medium</td>
+            <td class="n">300,000</td>
+            <td class="n">$25</td>
+            <td class="n">17.7%</td>
+            <td class="n red">$595</td>
+            <td class="n red">$238</td>
+            <td class="red">4× benchmark</td>
           </tr>
           <tr>
             <td>Court Manager Program</td>
-            <td class="num">389,000</td>
-            <td class="num">$77</td>
-            <td class="num">32%</td>
-            <td class="num">84%</td>
-            <td class="num">$292</td>
-            <td>Medium</td>
+            <td class="n">972,500</td>
+            <td class="n">$35</td>
+            <td class="n">26.9%</td>
+            <td class="n red">$730</td>
+            <td class="n red">$292</td>
+            <td class="red">5× benchmark</td>
           </tr>
           <tr>
             <td>Land Dispute Resolution</td>
-            <td class="num">216,000</td>
-            <td class="num">$32</td>
-            <td class="num">13%</td>
-            <td class="num">90%</td>
-            <td class="num">$272</td>
-            <td>Low–Med</td>
+            <td class="n">540,000</td>
+            <td class="n">$26</td>
+            <td class="n">11.7%</td>
+            <td class="n red">$680</td>
+            <td class="n red">$272</td>
+            <td class="red">4.5× benchmark</td>
           </tr>
           <tr>
             <td>ODR Private Platforms</td>
-            <td class="num">117,000</td>
-            <td class="num">$85</td>
-            <td class="num">33%</td>
-            <td class="num">76%</td>
-            <td class="num">$340</td>
-            <td>Medium</td>
-          </tr>
-          <tr>
-            <td>Legal Aid / Undertrial</td>
-            <td class="num">66,000</td>
-            <td class="num">$125</td>
-            <td class="num">20–34%</td>
-            <td class="num">81–86%</td>
-            <td class="num">$514–874</td>
-            <td>Medium</td>
-          </tr>
-          <tr>
-            <td>Scheduling Reform (courts)</td>
-            <td class="num">65,000</td>
-            <td class="num">$91</td>
-            <td class="num">6–10%</td>
-            <td class="num">85%</td>
-            <td class="num">$816–1,776</td>
-            <td>Low–Med</td>
+            <td class="n">292,500</td>
+            <td class="n">$43</td>
+            <td class="n">25.1%</td>
+            <td class="n red">$850</td>
+            <td class="n red">$340</td>
+            <td class="red">6× benchmark</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <figcaption>DALYs calculated using GiveWell's DCY framework (1 DALY = 2.5 doubled consumption years). P(success) reflects implementation risk, political feasibility, and organizational capacity. Additionality reflects counterfactual: what would happen without philanthropic funding.</figcaption>
+    <figcaption>All figures are philanthropic dollars. DCYs/yr shown for the direct-channel calculation. Risk-adjusted $/DALY matches the summary table using the full model including downstream economic multipliers. The benchmark is $60/DALY = $150/DCY.</figcaption>
   </figure>
-
-  <h3>How DALYs are generated</h3>
-
-  <p>Court reform DALYs flow through income gains rather than direct health effects. This creates a longer causal chain than health interventions, which contributes to the uncertainty in all estimates.</p>
-
-  <p>For NI Act digital courts: 600,000 cases per year reached → 28% settlement rate → 70% post-settlement compliance → 65% individual (not corporate) complainants → Rs 88,600 net gain per case → divided by Rs 300,000 annual income → 0.29 DCYs per case → divided by 2.5 → approximately 0.116 DALYs per case. At 76,000 cases resolved per year, this yields roughly 8,800 DALYs per year from the income channel alone. The undertrial component adds DALYs directly through disability weight (0.15 per incarceration year).</p>
-
-  <p>The most uncertain parameter is post-settlement compliance. Administrative data suggests 70% compliance for NI Act Lok Adalat awards in the short term, but long-term compliance data does not exist for digitally-mediated settlements. A scenario where compliance is 20% rather than 70% reduces all income-channel DALYs by roughly two-thirds.</p>
 </section>
 
 <!-- PORTFOLIO -->
 <section id="portfolio">
-  <div class="label">Recommended Portfolio</div>
+  <div class="lbl-section">Recommended Portfolio</div>
   <h2>The implementing partner question</h2>
 
-  <p>The biggest driver of uncertainty in court reform is not whether the technology works — it is whether it gets adopted at scale. This is fundamentally a question of political access and institutional relationships. One person's relationships change the expected value of the entire portfolio.</p>
+  <p>The biggest driver of uncertainty in court reform is not whether the technology works — it is whether it gets adopted at scale. This is a question of political access and institutional relationships.</p>
 
-  <p>Ajay Shah at XKDR Forum has direct working relationships with the Supreme Court e-Committee, the Ministry of Law and Justice, NALSA, and key High Court Chief Justices — particularly in Maharashtra, Delhi, and Karnataka. These are precisely the three veto points that have blocked previous reforms. A philanthropic funder working through this channel has roughly three times higher P(success) than a generic entrant, which roughly halves the risk-adjusted $/DALY across the portfolio.</p>
+  <p>Ajay Shah at XKDR Forum has direct working relationships with the Supreme Court e-Committee, the Ministry of Law and Justice, NALSA, and key High Court Chief Justices — particularly in Maharashtra, Delhi, and Karnataka. These are the three veto points that have blocked previous reforms. A philanthropic funder working through this channel has roughly three times higher P(success) than a new entrant, which roughly halves the risk-adjusted $/DALY across the portfolio.</p>
 
-  <p>With the Ajay Shah channel, P(NI Act digital court pilot succeeds) rises from 60% to 85%; P(two-state scale-up succeeds) from 25% to 55%; P(national policy adoption by 2031) from 10% to 28%. The combined probability of meaningful impact across the portfolio improves from roughly 7% to 20%. This single factor matters more than the choice between interventions.</p>
+  <p>Without that channel: P(NI Act pilot succeeds) ≈ 60%, P(two-state scale-up) ≈ 25%, P(national policy adoption by 2031) ≈ 10%. With it: 85%, 55%, 28%. The combined probability of meaningful impact improves from ~7% to ~20%. This matters more than the choice between interventions.</p>
 
   <h3>Phased construction</h3>
 
-  <p><strong>Phase 1 (Years 1–3, $5–7M):</strong> Deepen and rigorously evaluate the Kollam pilot. Fund two additional NI Act digital court pilots in Karnataka and Maharashtra. Commission an independent evaluation with pre-specified outcome measures — this is the evidence gap that would unlock government co-investment. Simultaneously, fund two Intensive Lok Adalat drives through NALSA with real-time data collection on settlement rates and compliance.</p>
+  <p><strong>Phase 1 (Years 1–3, $5–7M):</strong> Deepen and evaluate Kollam. Fund two additional NI Act digital court pilots in Karnataka and Maharashtra. Commission an independent evaluation with pre-specified outcome measures — this is the evidence gap that would unlock government co-investment. Simultaneously, fund two intensive Lok Adalat drives through NALSA with real-time data collection on settlement rates and compliance.</p>
 
-  <p><strong>Phase 2 (Years 3–7, $12–18M):</strong> Scale the interventions where Phase 1 evidence supports it. Introduce court manager program in pilot states. Advocate for SC-level integration of successful pilots into the e-Courts Phase III architecture. Begin MACT fast-tracking in one high-burden state.</p>
+  <p><strong>Phase 2 (Years 3–7, $12–18M):</strong> Scale where Phase 1 evidence supports it. Introduce court manager program in pilot states. Advocate for SC-level integration of successful pilots into the e-Courts Phase III architecture. Begin MACT fast-tracking in one high-burden state if a state-level partner exists.</p>
 
-  <p><strong>Phase 3 (Years 7–10, $8–12M):</strong> Policy consolidation. Embed successful protocols into national guidelines. Reduce philanthropic funding as government absorbs operational costs. Transition to advocacy for remaining regulatory barriers (ODR enforcement, POCSO fast-track expansion).</p>
+  <p><strong>Phase 3 (Years 7–10, $8–12M):</strong> Policy consolidation. Embed successful protocols into national guidelines. Reduce philanthropic funding as government absorbs operational costs.</p>
 
   <h3>Portfolio scenarios</h3>
 
@@ -520,68 +564,66 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>Best case</strong> (interventions work, Ajay Shah channel)</td>
-            <td class="num">$27–40/DALY</td>
-            <td class="num">$30–45/DALY</td>
-            <td class="num">$35–60/DALY</td>
+            <td><strong>Best case</strong></td>
+            <td class="n">$40/DALY</td>
+            <td class="n">$45/DALY</td>
+            <td class="n">$60/DALY</td>
           </tr>
           <tr>
-            <td><strong>Base case</strong> (partial scale, normal implementation)</td>
-            <td class="num">$87–130/DALY</td>
-            <td class="num">$100–180/DALY</td>
-            <td class="num">$120–250/DALY</td>
+            <td><strong>Base case</strong></td>
+            <td class="n">$87–130/DALY</td>
+            <td class="n">$100–180/DALY</td>
+            <td class="n">$120–250/DALY</td>
           </tr>
           <tr>
-            <td><strong>Downside</strong> (bar opposition, low compliance)</td>
-            <td class="num">$378–780/DALY</td>
-            <td class="num">$400–900/DALY</td>
-            <td class="num">$450+/DALY</td>
+            <td><strong>Downside</strong></td>
+            <td class="n">$378–780/DALY</td>
+            <td class="n">$400–900/DALY</td>
+            <td class="n">$450+/DALY</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <figcaption>Larger portfolios show diminishing returns because additional marginal interventions (land disputes, undertrial programs) have lower CE. A $20M portfolio concentrated on NI Act digital courts and Lok Adalat drives offers better expected CE than a diluted $100M portfolio across all six intervention types.</figcaption>
+    <figcaption>Larger portfolios show diminishing returns — additional interventions have lower CE. A $20M portfolio concentrated on NI Act digital courts and Lok Adalat drives offers better expected CE than a diluted $100M portfolio. Even in the downside scenario, all figures remain below the WHO India threshold of $2,800/DALY.</figcaption>
   </figure>
-
-  <p>The downside scenario — bar associations in Maharashtra or UP actively opposing NI Act courts as precedent, state governments failing to absorb court managers, Lok Adalat compliance at 20% rather than 70% — still yields a $/DALY below the WHO India threshold of $2,800. This is not a binary bet. Even in the downside case, the investment produces positive expected value.</p>
 </section>
 
 <!-- EVIDENCE -->
 <section id="evidence">
-  <div class="label">Evidence Base</div>
-  <h2>What the research actually shows</h2>
+  <div class="lbl-section">Evidence Base</div>
+  <h2>What the research shows</h2>
 
-  <p>No RCT evidence exists for any Indian court modernization intervention. The case rests on quasi-experimental studies, administrative data, and carefully drawn analogies. The confidence ratings below reflect this honestly.</p>
+  <p>No RCT evidence exists for any Indian court modernization intervention. The case rests on quasi-experimental studies, administrative data, and analogies. Confidence ratings reflect this.</p>
 
-  <p><strong>Visaria 2009</strong> (American Economic Journal: Applied Economics) remains the strongest causal evidence in the literature. Using a difference-in-differences design on the introduction of Debt Recovery Tribunals, Visaria found that loan delinquency fell 28% and interest rates declined in affected districts. The DRT model — specialized courts for a single, standardized case type — is the direct structural analogue for NI Act digital courts. <em>Confidence: high.</em></p>
+  <p><strong>Visaria 2009</strong> (American Economic Journal: Applied Economics). Difference-in-differences on Debt Recovery Tribunal introduction. Loan delinquency fell 28%; interest rates declined in affected districts. The DRT model — specialized courts for a single standardized case type — is the structural analogue for NI Act digital courts. <em>Confidence: high.</em></p>
 
-  <p><strong>Chemin 2020</strong> (Review of Economics and Statistics) used a triple-difference design across 19 Indian states and multiple reform episodes to estimate that comprehensive judicial reforms produce a 22% firm productivity gain. The critical finding: partial reforms show zero measurable effect. There appears to be a threshold of comprehensiveness below which court reform does not move economic outcomes. <em>Confidence: medium.</em></p>
+  <p><strong>Chemin 2020</strong> (Review of Economics and Statistics). Triple-difference across 19 Indian states. Comprehensive judicial reforms produced a 22% firm productivity gain. Partial reforms showed zero effect — there is a threshold below which court reform does not move economic outcomes. <em>Confidence: medium.</em></p>
 
-  <p><strong>Rao 2024</strong> (SSRN) used court-level panel data across India to estimate that each additional judge generates 10–20% bank lending increase in the district. The implied return is roughly 30× the judge's salary. This is direct evidence that judicial capacity has quantifiable macro effects, even without behavioral reform. <em>Confidence: medium.</em></p>
+  <p><strong>Rao 2024</strong> (SSRN). Court-level panel data across India. Each additional judge generates 10–20% bank lending increase in the district, at roughly 30× the judge's salary in economic returns. <em>Confidence: medium.</em></p>
 
-  <p><strong>DAKSH Access to Justice Survey 2016</strong> (n=9,000, 24 states) remains the only nationally representative litigant cost survey in India. Rs 1,746 per day in direct and opportunity costs underpins all DALY calculations involving litigant time savings. <em>Confidence: high for survey data; medium for 2026 extrapolation.</em></p>
+  <p><strong>DAKSH Access to Justice Survey 2016</strong> (n=9,000, 24 states). The only nationally representative litigant cost survey in India. Rs 1,746/day underpins all DALY calculations involving litigant time savings. <em>Confidence: high for survey data; medium for 2026 extrapolation.</em></p>
 
-  <p><strong>Philippines IPA quasi-experiment — continuous trial reform.</strong> The only RCT-adjacent evidence for scheduling reform directly applicable to India: a 10–14% case duration reduction from eliminating unnecessary adjournments in criminal courts. The analogy is imperfect (different legal system, different bar structure) but represents the best available counterfactual. <em>Confidence: medium; external validity uncertain.</em></p>
+  <p><strong>Philippines IPA continuous trial reform.</strong> 10–14% case duration reduction from eliminating unnecessary adjournments in criminal courts. The only RCT-adjacent evidence directly applicable to India. External validity to India's bar structure is uncertain. <em>Confidence: medium.</em></p>
 
-  <p><strong>Kollam ON Court pilot (2025–26).</strong> 843 NI Act cases; median disposal 150–180 days versus 609-day baseline. Only 19% of baseline hearings were substantive. This is the most important live evidence in the analysis — but it is one court, one year, in Kerala. Generalizability to other states is not established. <em>Confidence: high for the Kollam result; low for scale-up.</em></p>
+  <p><strong>Kollam ON Court pilot (2025–26).</strong> 843 NI Act cases; median disposal 150–180 days versus 609-day baseline; 19% of baseline hearings substantive. One court, one year, in Kerala. <em>Confidence: high for the Kollam result; low for scale-up.</em></p>
 
-  <p><strong>Special Lok Adalat dataset — 13,531 NI Act cases.</strong> Three statewide drives across Haryana, Madhya Pradesh, and Chhattisgarh. Weighted settlement rate: 28%. Average claim value: Rs 1.93 lakh. This is the first large-N empirical data on NI Act settlement amounts, and it is the primary anchor for the income-channel DALY calculations. <em>Confidence: medium (no compliance follow-up data).</em></p>
+  <p><strong>Special Lok Adalat dataset — 13,531 NI Act cases.</strong> Haryana (9,590 cases), MP (1,945), Chhattisgarh (1,996). Weighted settlement rate: 28%. Average claim: Rs 1.93 lakh. First large-N empirical data on NI Act settlement amounts. No compliance follow-up. <em>Confidence: medium.</em></p>
 
-  <h3>Critical evidence gaps</h3>
+  <h3>Evidence gaps</h3>
 
-  <p>No post-settlement compliance data exists for NI Act Lok Adalat awards at scale. No GBD disability weight exists for incarceration (the analysis uses 0.15 by analogy to moderate depression). No survey of NI Act complainant income distribution exists — the Rs 300,000/year figure is an estimate from indirect sources. The Kollam pilot has one year of data from one court. These are not reasons to avoid the investment; they are the inputs that a properly designed Phase 1 should resolve.</p>
+  <p>No post-settlement compliance data exists for Lok Adalat NI Act awards at scale. No GBD disability weight exists for incarceration — we use 0.15 by analogy to moderate depression. No survey of NI Act complainant income distribution exists — Rs 300,000/year is estimated from indirect sources. The Kollam pilot has one year of data from one court. These are not reasons to avoid the investment; they are what a properly designed Phase 1 should resolve.</p>
 </section>
 
 <!-- METHODOLOGY -->
 <section id="method">
-  <div class="label">Methodology</div>
+  <div class="lbl-section">Methodology</div>
   <h2>How the BOTECs work</h2>
 
-  <p>All numbers are Fermi estimates designed to be transparent and challengeable. The goal is calibrated uncertainty, not false precision. Every parameter is listed explicitly so that disagreement can be located precisely.</p>
+  <p>All numbers are Fermi estimates. The goal is calibrated uncertainty, not false precision. Every parameter is listed so disagreement can be located precisely.</p>
 
-  <p>Court reform DALYs are generated through income gains, not direct health effects. The conversion follows GiveWell's DCY (Doubled Consumption Year) framework: 1 DALY = 2.5 DCYs, where one DCY is the welfare gain from doubling one person's consumption for one year. This framework weights gains more heavily for lower-income recipients — a Rs 88,600 gain to someone earning Rs 300,000 per year converts to a larger DCY fraction than the same nominal gain to someone earning Rs 3,000,000 per year.</p>
+  <p>A <strong>Doubled Consumption Year (DCY)</strong> is the welfare equivalent of doubling someone's consumption for one year. To calculate DCYs from a financial gain: divide the gain by the person's annual income. To convert DCYs to DALYs: divide by 2.5. This framework weights gains more heavily for lower-income recipients — the same Rs 88,600 gain converts to a larger DCY fraction at Rs 300K/year income than at Rs 3M/year.</p>
 
-  <p>The worked example for NI Act Lok Adalat ODR: 600,000 cases reached per year × 28% settlement rate = 168,000 settled × 70% compliance = 117,600 paid × 65% individual (not corporate) fraction = 76,440 individuals × Rs 88,600 net gain ÷ Rs 300,000 annual income = 0.295 DCYs per case → ÷ 2.5 = 0.118 DALYs per case → × 76,440 cases = 9,020 DALYs per year. At $19M/year philanthropic cost, this yields $2,120/DALY raw. The dedicated digital court approach (which reduces case duration by 18 months rather than achieving settlement) operates through a different mechanism and yields a different denominator — approximately $7–8/DALY raw — because the cost per case resolved is much lower when government bears 80% of the infrastructure costs.</p>
+  <p><strong>Risk adjustment</strong> multiplies raw $/DCY by (1 ÷ P(success)) × (1 ÷ additionality). P(success) is estimated from political feasibility (additive vs. zero-sum classification, bar association likely response, state government receptivity), organizational capacity of implementing partner, and analogies from comparable reforms in India and internationally. Additionality assesses what fraction of impact would have occurred without philanthropic funding.</p>
 
   <figure>
     <div class="table-wrap">
@@ -595,24 +637,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>NI Act complainant income</td><td class="num">Rs 300K/yr</td><td class="num">Rs 200–400K</td><td>High — drives DCY conversion directly</td></tr>
-          <tr><td>Lok Adalat settlement rate</td><td class="num">28%</td><td class="num">21–42%</td><td>High — empirically anchored, moderate variance</td></tr>
-          <tr><td>Post-settlement compliance</td><td class="num">70%</td><td class="num">20–90%</td><td>Very high — most uncertain parameter</td></tr>
-          <tr><td>Average NI Act claim (complainant)</td><td class="num">Rs 1.93L</td><td class="num">Rs 1–5L</td><td>High — Lok Adalat dataset anchors base case</td></tr>
-          <tr><td>Digital court case duration</td><td class="num">240 days</td><td class="num">150–300 days</td><td>Medium — Kollam gives 150-180 days</td></tr>
-          <tr><td>Undertrial disability weight</td><td class="num">0.15</td><td class="num">0.10–0.25</td><td>Medium — analogy to GBD depression weights</td></tr>
-          <tr><td>GDP cost of judicial delay</td><td class="num">1.0–1.5% GDP</td><td class="num">0.5–2.0%</td><td>Low — macro channel, not used in primary BOTEC</td></tr>
+          <tr><td>NI Act complainant annual income</td><td class="n">Rs 300K</td><td class="n">Rs 200–400K</td><td>High — drives DCY conversion directly</td></tr>
+          <tr><td>Lok Adalat settlement rate</td><td class="n">28%</td><td class="n">21–42%</td><td>High — empirically anchored, moderate variance</td></tr>
+          <tr><td>Post-settlement compliance</td><td class="n">70%</td><td class="n">20–90%</td><td>Very high — most uncertain parameter</td></tr>
+          <tr><td>Average NI Act claim</td><td class="n">Rs 1.93L</td><td class="n">Rs 1–5L</td><td>High — anchored by Lok Adalat dataset</td></tr>
+          <tr><td>Digital court case duration</td><td class="n">240 days</td><td class="n">150–300 days</td><td>Medium — Kollam gives 150–180 days</td></tr>
+          <tr><td>Undertrial disability weight</td><td class="n">0.15</td><td class="n">0.10–0.25</td><td>Medium — analogy to GBD depression weights</td></tr>
         </tbody>
       </table>
     </div>
-    <figcaption>Parameters listed in order of sensitivity. Post-settlement compliance is the single parameter with the widest uncertainty range and among the highest leverage — a 20% compliance scenario roughly triples the risk-adjusted $/DALY.</figcaption>
+    <figcaption>Post-settlement compliance is the single parameter with the widest uncertainty range. A 20% compliance scenario triples the risk-adjusted $/DALY for all income-channel calculations.</figcaption>
   </figure>
-
-  <p>Risk adjustment multiplies raw $/DALY by (1 / P(success)) × (1 / additionality fraction). P(success) is estimated from a combination of political feasibility assessment (additive vs. zero-sum classification, bar association likely response, state government receptivity), organizational capacity of implementing partner, and analogies from comparable reforms in India and internationally. Additionality assesses what fraction of the impact would have occurred anyway without philanthropic funding, based on current government plans, other funder activity, and the specific activities being funded (design and behavior change rather than infrastructure that government was already building).</p>
 </section>
 
 <footer>
-  Based on 9 deep research runs conducted August 2026 across approximately 200 primary and secondary sources. Sources include DAKSH Access to Justice Survey, Supreme Court e-Committee filings, NALSA administrative data, Lok Adalat case-level datasets, academic literature (Visaria 2009, Chemin 2020, Rao 2024), and the Kollam ON Court pilot interim data. BOTEC methodology follows GiveWell's DCY framework. All figures are estimates subject to substantial uncertainty. Not investment advice.
+  Based on 9 deep research runs conducted August 2026 across ~200 primary and secondary sources. Sources include DAKSH Access to Justice Survey, Supreme Court e-Committee filings, NALSA administrative data, Lok Adalat case-level datasets, academic literature (Visaria 2009, Chemin 2020, Rao 2024), and the Kollam ON Court pilot interim data. BOTEC methodology follows GiveWell's DCY framework. All figures are estimates.
 </footer>
 
 </body>
