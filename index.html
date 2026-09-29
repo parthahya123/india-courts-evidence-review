@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India Court Modernization — Philanthropic Evidence Review</title>
+  <style>
+    :root {
+      --ink: #1a1a2e;
+      --ink2: #2d2d44;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #fafafa;
+      --card: #ffffff;
+      --accent: #2563eb;
+      --accent-light: #eff6ff;
+      --green: #16a34a;
+      --green-light: #f0fdf4;
+      --yellow: #d97706;
+      --yellow-light: #fffbeb;
+      --red: #dc2626;
+      --red-light: #fef2f2;
+      --orange: #ea580c;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,250,250,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+    nav ul {
+      display: flex; gap: 2rem; list-style: none;
+      max-width: 1100px; margin: 0 auto;
+      overflow-x: auto; white-space: nowrap;
+    }
+    nav li a {
+      display: block; padding: 1rem 0;
+      font-size: 0.875rem; font-weight: 500;
+      color: var(--muted); border-bottom: 2px solid transparent;
+    }
+    nav li a:hover { color: var(--ink); text-decoration: none; }
+    nav li a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    /* LAYOUT */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    section { padding: 4rem 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1e1b4b 0%, #1a1a2e 60%, #0f172a 100%);
+      color: white; padding: 5rem 0 4rem;
+    }
+    .hero-label {
+      display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #93c5fd; margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 700;
+      line-height: 1.15; margin-bottom: 1.25rem; max-width: 750px;
+    }
+    .hero p {
+      font-size: 1.15rem; color: rgba(255,255,255,0.75);
+      max-width: 640px; margin-bottom: 2rem;
+    }
+    .hero-meta {
+      font-size: 0.8rem; color: rgba(255,255,255,0.45);
+    }
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .hero-stat {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px; padding: 1.25rem;
+    }
+    .hero-stat .num {
+      font-size: 1.9rem; font-weight: 700; color: #93c5fd; line-height: 1;
+    }
+    .hero-stat .label { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-top: 0.4rem; }
+
+    /* SECTION HEADERS */
+    .section-label {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .section-intro {
+      font-size: 1.05rem; color: var(--muted); max-width: 680px;
+      margin-bottom: 2.5rem; line-height: 1.7;
+    }
+
+    /* CALLOUT */
+    .callout {
+      background: var(--accent-light); border-left: 4px solid var(--accent);
+      border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .callout.warning { background: var(--yellow-light); border-color: var(--yellow); }
+    .callout.good { background: var(--green-light); border-color: var(--green); }
+    .callout strong { display: block; margin-bottom: 0.25rem; }
+
+    /* GRID */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+
+    /* CARDS */
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem; transition: box-shadow 0.2s;
+    }
+    .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+    /* INTERVENTION CARDS */
+    .intervention {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .intervention:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+    .intervention-header {
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .intervention-header h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .intervention-header p { font-size: 0.85rem; color: var(--muted); }
+    .intervention-body { padding: 1.25rem 1.5rem; }
+    .ce-row { display: flex; gap: 1.5rem; margin-bottom: 1rem; }
+    .ce-item { flex: 1; }
+    .ce-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; }
+    .ce-val { font-size: 1.35rem; font-weight: 700; line-height: 1; margin-top: 0.2rem; }
+    .ce-val.good { color: var(--green); }
+    .ce-val.ok { color: var(--yellow); }
+    .ce-val.hard { color: var(--red); }
+    .detail-row { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.4rem; font-size: 0.85rem; }
+    .detail-row .icon { flex-shrink: 0; width: 16px; text-align: center; margin-top: 2px; }
+    .badge {
+      display: inline-block; padding: 0.2em 0.6em;
+      border-radius: 20px; font-size: 0.7rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .badge-green { background: var(--green-light); color: var(--green); }
+    .badge-yellow { background: var(--yellow-light); color: var(--yellow); }
+    .badge-red { background: var(--red-light); color: var(--red); }
+    .badge-blue { background: var(--accent-light); color: var(--accent); }
+
+    /* BOTEC TABLE */
+    .table-wrap { overflow-x: auto; margin: 2rem 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    th {
+      background: #f1f5f9; text-align: left;
+      padding: 0.75rem 1rem; font-weight: 600;
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.7rem 1rem; border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:hover td { background: #f9fafb; }
+    .highlight-row td { background: var(--green-light); font-weight: 600; }
+    td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+    /* TIMELINE */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 7px; top: 8px;
+      bottom: 8px; width: 2px; background: var(--border);
+    }
+    .timeline-item { position: relative; margin-bottom: 2rem; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -1.75rem; top: 5px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--accent); border: 2px solid white;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .timeline-item h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .timeline-item .meta { font-size: 0.8rem; color: var(--accent); font-weight: 600; margin-bottom: 0.4rem; }
+    .timeline-item p { font-size: 0.875rem; color: var(--muted); }
+
+    /* PROBABILITY TABLE */
+    .prob-table { display: grid; gap: 0.75rem; margin: 1.5rem 0; }
+    .prob-row {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.75rem 1rem;
+    }
+    .prob-label { flex: 1; font-size: 0.875rem; }
+    .prob-bar-wrap { width: 180px; }
+    .prob-bar {
+      height: 6px; border-radius: 3px; background: var(--border); overflow: hidden;
+    }
+    .prob-bar-fill { height: 100%; border-radius: 3px; background: var(--accent); }
+    .prob-num { font-size: 0.85rem; font-weight: 600; width: 40px; text-align: right; }
+
+    /* EVIDENCE TABLE */
+    .evidence-item {
+      padding: 1rem; border: 1px solid var(--border);
+      border-radius: 8px; margin-bottom: 0.75rem;
+      background: var(--card);
+    }
+    .evidence-item h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.35rem; }
+    .evidence-item p { font-size: 0.84rem; color: var(--muted); margin-bottom: 0.4rem; }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink); color: rgba(255,255,255,0.5);
+      padding: 3rem 0; font-size: 0.85rem;
+    }
+    footer .footer-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      section { padding: 2.5rem 0; }
+      .hero { padding: 3rem 0 2.5rem; }
+      .ce-row { flex-direction: column; gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#problem" class="active">The Problem</a></li>
+    <li><a href="#why-stuck">Why It's Stuck</a></li>
+    <li><a href="#window">The Window</a></li>
+    <li><a href="#interventions">Interventions</a></li>
+    <li><a href="#botec">BOTEC</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#evidence">Evidence</a></li>
+    <li><a href="#methodology">Methodology</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <span class="hero-label">Philanthropic Evidence Review</span>
+    <h1>India Court Modernization</h1>
+    <p>52.5 million cases pending. A 300-year backlog. One of the largest and most neglected governance failures in the world — and a tractable philanthropic opportunity.</p>
+    <div class="hero-meta">Based on 9 deep research runs · ~200 sources · August 2026</div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">52.5M</div>
+        <div class="label">Cases pending</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">61%</div>
+        <div class="label">Hearings that are just adjournments</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">371K</div>
+        <div class="label">Undertrial prisoners awaiting trial</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">$19B</div>
+        <div class="label">Annual economic cost of delays</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">$7–40</div>
+        <div class="label">Best-case $/DALY (raw → risk-adj.)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- THE PROBLEM -->
+<section id="problem">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2>A backlog so large it would take 300 years to clear</h2>
+    <p class="section-intro">India's courts receive about 35 million new cases per year. They dispose of fewer. Every year, the gap grows. The damage is not abstract — it falls hardest on the poorest.</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>The scale</h3>
+        <p>52.5 million pending cases across India's district courts, high courts, and Supreme Court. 4.3 million of them are cheque bounce (NI Act Section 138) cases — commercial disputes where a supplier is waiting years for payment that a bounced cheque promised them today.</p>
+      </div>
+      <div class="card">
+        <h3>The cost to litigants</h3>
+        <p>The DAKSH survey of 9,000 litigants across 24 states found litigants lose Rs 1,746/day in direct costs and opportunity costs. A typical NI Act case takes 3–7 years, averaging 32 adjournments. Each adjournment is a day of work lost, a lawyer's fee paid, a trip to a distant court.</p>
+      </div>
+      <div class="card">
+        <h3>Who bears the burden</h3>
+        <p>90% of litigants earn under Rs 3 lakh/year. 371,440 undertrial prisoners are awaiting trial — 72.6% of India's entire prison population — two-thirds of them from SC/ST/OBC communities. Many are in prison longer than the sentence they would have received if convicted.</p>
+      </div>
+      <div class="card">
+        <h3>The economic toll</h3>
+        <p>Judicial delays cost an estimated 1–2% of GDP ($40–80B) annually through frozen capital, delayed contract enforcement, and lost productivity. India ranks 163rd of 190 countries on contract enforcement (1,445 days vs. OECD average of 589). This is a direct drag on investment and firm productivity.</p>
+      </div>
+      <div class="card">
+        <h3>The capacity gap</h3>
+        <p>5,400 of India's ~25,000 sanctioned judge positions are vacant — courts operate at 78% capacity before accounting for adjournments. India has 22 judges per million population; the recommended benchmark is 50. No meaningful judge-to-case ratio improvement has occurred in 20 years.</p>
+      </div>
+      <div class="card">
+        <h3>The undertrial crisis</h3>
+        <p>Of India's 574,000 prisoners, 371,440 are waiting for their trial to conclude. Many are in jail because they cannot afford bail — not because a court found them guilty. S.436A of the CrPC gives courts power to release them; enforcement is minimal. A day in jail is estimated at a 0.15 disability weight — equivalent in suffering to moderate depression.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT'S STUCK -->
+<section id="why-stuck">
+  <div class="container">
+    <div class="section-label">Why It's Stuck</div>
+    <h2>The adjournment economy</h2>
+    <p class="section-intro">The government has spent Rs 9,800 crore ($1.2B) on court computerization since 2011. Pendency has increased. The problem is not a lack of technology — it's a structural conflict of interest.</p>
+
+    <div class="callout warning">
+      <strong>The core structural problem</strong>
+      1.7 million lawyers in India earn their income on a per-appearance fee model: every time a case is listed and they show up, they bill. Adjournments are billing events. 61% of all court hearings produce no progress. This is not a bug — it is a feature of the incentive structure. Bar associations exercise what legal scholars call a "right of veto" over judicial functioning.
+    </div>
+
+    <div class="grid-2" style="margin-top:2rem">
+      <div>
+        <h3 style="margin-bottom:1rem; font-size:1rem;">What bar associations have blocked</h3>
+        <div class="evidence-item">
+          <h4>CJ Satish Chandra transfer</h4>
+          <p>The Chief Justice who attempted to enforce anti-delay measures was transferred following bar association pressure. The reform died with his tenure.</p>
+        </div>
+        <div class="evidence-item">
+          <h4>Commercial Courts enforcement</h4>
+          <p>The Commercial Courts Act 2015 mandated 3-adjournment limits with cost consequences. Only 34% of targeted courts actually meet disposal benchmarks — enforcement collapses in practice.</p>
+        </div>
+        <div class="evidence-item">
+          <h4>Fast-Track Court collapses</h4>
+          <p>India has created and then allowed fast-track courts to lapse multiple times. The 13th Finance Commission allocated Rs 300 crore for court managers in 2010. Most states failed to absorb them — the infrastructure existed but the behavior did not change.</p>
+        </div>
+        <div class="evidence-item">
+          <h4>POCSO fast-track courts</h4>
+          <p>Despite Supreme Court oversight and political priority for child abuse cases, only 34% of POCSO fast-track courts meet their disposal benchmarks.</p>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem; font-size:1rem;">The three actors with veto power</h3>
+        <div class="card" style="margin-bottom:0.75rem;">
+          <h3>Bar associations</h3>
+          <p>Strike action is the primary tool. Lawyers have struck against specific judges who enforce scheduling limits. The economic incentive to maintain the status quo is ~Rs 150/appearance × 32 adjournments per NI Act case = substantial income per case.</p>
+        </div>
+        <div class="card" style="margin-bottom:0.75rem;">
+          <h3>Judges on short rotations</h3>
+          <p>District judges typically serve 2-year terms before transfer. The time horizon is too short to push through reforms that will make them unpopular with the local bar. There is no career incentive for systemic change.</p>
+        </div>
+        <div class="card">
+          <h3>State governments</h3>
+          <p>93.5% of the judiciary's budget is state-funded. States face no political penalty for court delay — voters do not punish politicians for a slow commercial court. Absent political will, implementations stall.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE WINDOW -->
+<section id="window">
+  <div class="container">
+    <div class="section-label">The Window</div>
+    <h2>Three things changed in 2024–25</h2>
+    <p class="section-intro">The structural barriers are real — but so is a genuine legislative and institutional opening. The right strategy works with these new levers rather than against the existing veto points.</p>
+
+    <div class="grid-3" style="margin-bottom:2.5rem;">
+      <div class="card">
+        <h3>Mediation Act 2023</h3>
+        <p>India's first statutory framework for court-annexed mediation. NALSA can now mandate online dispute resolution — cases go to mediators, not lawyers. This bypasses bar associations structurally, because ODR is additive rather than replacing lawyer appearances.</p>
+      </div>
+      <div class="card">
+        <h3>SC Sanjabij Tari guidelines (2025)</h3>
+        <p>The Supreme Court issued specific directives for High Courts to route cheque bounce backlogs to ODR. This is a top-down mandate from India's most powerful judicial institution. Bar associations cannot formally block Supreme Court directives.</p>
+      </div>
+      <div class="card">
+        <h3>e-Courts Phase III ($870M)</h3>
+        <p>Government capital of Rs 7,210 crore is available through 2027 for the technology layer. Philanthropic money does not need to buy computers — it buys design, behavior change, and reform-enabling features on top of this infrastructure.</p>
+      </div>
+    </div>
+
+    <div class="callout good">
+      <strong>The key insight: additive vs. zero-sum</strong>
+      The reforms that have worked in India created new court slots (additive) rather than taking cases away from existing courts (zero-sum). NI Act fast-track digital courts are additive — they don't threaten existing lawyers' income. Scheduling reform in existing courts is zero-sum — it directly cuts appearance fees. This distinction drives the dramatic difference in political feasibility between interventions.
+    </div>
+
+    <div style="margin-top: 2rem;">
+      <h3 style="margin-bottom:1rem; font-size: 1rem; font-weight:600;">Why NI Act cases are the right entry point</h3>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Standardized cases</h3>
+          <p>Every NI Act case has essentially two facts: did the cheque bounce? (bank statement proves it) and what was the amount? This makes AI-assisted triage and structured negotiation tractable in a way that complex civil or criminal cases are not.</p>
+        </div>
+        <div class="card">
+          <h3>Criminal leverage for settlement</h3>
+          <p>Section 138 is a <em>criminal</em> offence — up to 2 years imprisonment. This gives complainants leverage. When the alternative is prosecution, defendants are motivated to settle. This is why India's Lok Adalat settlement rate for NI Act cases (28-42%) is far higher than for purely civil disputes.</p>
+        </div>
+        <div class="card">
+          <h3>Low bar resistance</h3>
+          <p>NI Act cases are typically handled by junior lawyers at low fees. Senior bar association leadership rarely defends NI Act pendency aggressively. The political cost of creating a dedicated NI Act digital court is much lower than general scheduling reform.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERVENTIONS -->
+<section id="interventions">
+  <div class="container">
+    <div class="section-label">Interventions</div>
+    <h2>Six approaches, ranked by cost-effectiveness</h2>
+    <p class="section-intro">We analyzed nine distinct court reform approaches across multiple research runs. Six are selected here by cost-effectiveness. Costs are philanthropic dollars unless noted.</p>
+
+    <!-- INTERVENTION 1: NI Act Digital Courts -->
+    <div class="intervention" style="margin-bottom:1.25rem;">
+      <div class="intervention-header">
+        <span class="badge badge-green">Best CE · Lead Recommendation</span>
+        <h3 style="margin-top:0.5rem;">NI Act Fast-Track Digital Courts</h3>
+        <p>Dedicated digital courts for the 4.3M pending cheque bounce cases. Asynchronous online proceedings, strict scheduling, AI-assisted triage. Modeled on Kollam, Kerala pilot (5–6 month disposal vs. 609-day baseline).</p>
+      </div>
+      <div class="intervention-body">
+        <div class="ce-row">
+          <div class="ce-item">
+            <div class="ce-label">Raw $/DALY</div>
+            <div class="ce-val good">$7–8</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">Risk-Adjusted $/DALY</div>
+            <div class="ce-val good">$40</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">DALYs/yr (modeled)</div>
+            <div class="ce-val">151K</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">P(success)</div>
+            <div class="ce-val">22%</div>
+          </div>
+        </div>
+        <div class="detail-row"><span class="icon">✓</span><span><strong>Mechanism:</strong> 300K cases/yr settled in 5–6 months (vs. 3–7 years). Each case saves ~Rs 13,000 in litigant costs and Rs 150K in recovered money. 80% of judge/staff costs borne by government; philanthropic share is only 19.5% of total.</span></div>
+        <div class="detail-row"><span class="icon">✓</span><span><strong>Kollam pilot:</strong> Godrej Foundation / Agami funded Kollam ON Court in Kerala. 843 cases filed; median disposal 150–180 days vs. 609-day baseline. 19% of hearings were substantive in the baseline — most court time is procedural waste.</span></div>
+        <div class="detail-row"><span class="icon">⚠</span><span><strong>Key risk:</strong> Bar associations may oppose NI Act courts as precedent for broader reform. Kollam succeeded partly because Kerala's bar culture is unusually reform-receptive. Scale-up to UP or Bihar could face stronger resistance.</span></div>
+        <div class="detail-row"><span class="icon">📍</span><span><strong>Best geography:</strong> Kerala (existing pilot) → Karnataka → Maharashtra. Avoid UP/Bihar in Phase 1.</span></div>
+      </div>
+    </div>
+
+    <!-- INTERVENTION 2: Lok Adalat Drives -->
+    <div class="intervention" style="margin-bottom:1.25rem;">
+      <div class="intervention-header">
+        <span class="badge badge-green">Strong CE · High Scale</span>
+        <h3 style="margin-top:0.5rem;">Lok Adalat Drives + Case Management Reform</h3>
+        <p>Intensive NI Act settlement drives through National Lok Adalats — single-day sessions where both parties negotiate face-to-face with a mediator. Combined with adjournment reduction via SC-mandated case management protocols.</p>
+      </div>
+      <div class="intervention-body">
+        <div class="ce-row">
+          <div class="ce-item">
+            <div class="ce-label">Raw $/DALY</div>
+            <div class="ce-val good">$25</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">Risk-Adjusted $/DALY</div>
+            <div class="ce-val good">$87</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">DALYs/yr (modeled)</div>
+            <div class="ce-val">165K</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">P(success)</div>
+            <div class="ce-val">39%</div>
+          </div>
+        </div>
+        <div class="detail-row"><span class="icon">✓</span><span><strong>Mechanism:</strong> NALSA runs National Lok Adalats; each session settles thousands of NI Act cases. Observed settlement rates: 21% (Chhattisgarh) to 42% (Madhya Pradesh), weighted average ~28%. Average settlement amount: Rs 1.93 lakh from 13,531-case dataset (Haryana, MP, Chhattisgarh 2026).</span></div>
+        <div class="detail-row"><span class="icon">✓</span><span><strong>Highest P(success)</strong> of all approaches (38.7%) — works through NALSA infrastructure that already exists nationwide, bypasses bar resistance by routing to mediators.</span></div>
+        <div class="detail-row"><span class="icon">⚠</span><span><strong>Key uncertainty:</strong> Post-settlement compliance — whether defendants actually pay after agreeing. Bank NPA data suggests Lok Adalat recovery rates of only 2.3–6.2% for bank cases. NI Act compliance data is sparse; this is the most important unknown.</span></div>
+        <div class="detail-row"><span class="icon">📍</span><span><strong>Best geography:</strong> National via NALSA's 672 DLSAs, prioritizing Uttar Pradesh (largest backlog).</span></div>
+      </div>
+    </div>
+
+    <!-- INTERVENTION 3: ODR Platforms -->
+    <div class="intervention" style="margin-bottom:1.25rem;">
+      <div class="intervention-header">
+        <span class="badge badge-yellow">Good CE · AI-driven cost decline</span>
+        <h3 style="margin-top:0.5rem;">ODR / Private Sector Platforms</h3>
+        <p>Subsidize and scale online dispute resolution platforms (SAMA, Presolv360) for NI Act and small MACT cases. SAMA has already resolved 3.5M cases; per-case cost of ~Rs 1,700 is well-documented.</p>
+      </div>
+      <div class="intervention-body">
+        <div class="ce-row">
+          <div class="ce-item">
+            <div class="ce-label">Raw $/DALY</div>
+            <div class="ce-val ok">$85</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">Risk-Adjusted $/DALY</div>
+            <div class="ce-val ok">$340</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">DALYs/yr (modeled)</div>
+            <div class="ce-val">117K</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">Achievable $/DALY</div>
+            <div class="ce-val good">$22</div>
+          </div>
+        </div>
+        <div class="detail-row"><span class="icon">✓</span><span><strong>AI cost collapse:</strong> LLM inference costs falling ~80%/year. By Year 6–10, per-case ODR cost projected at Rs 458 ($5.45), pushing achievable $/DALY to $180 raw / $600 risk-adjusted. This is a bet on the cost curve.</span></div>
+        <div class="detail-row"><span class="icon">⚠</span><span><strong>Key risk:</strong> Both-party consent required. Complainants may prefer the criminal court threat under S.138 over ODR. The leverage that makes NI Act cases highly settleable in criminal court is lost if ODR is civil-only.</span></div>
+        <div class="detail-row"><span class="icon">📍</span><span><strong>Best geography:</strong> Maharashtra — active ODR ecosystem, Bombay HC empanelment, high NI Act case volume.</span></div>
+      </div>
+    </div>
+
+    <!-- INTERVENTION 4: MACT -->
+    <div class="intervention" style="margin-bottom:1.25rem;">
+      <div class="intervention-header">
+        <span class="badge badge-yellow">Strong CE · Serves poorest claimants</span>
+        <h3 style="margin-top:0.5rem;">MACT Fast-Tracking (Motor Accident Compensation)</h3>
+        <p>Expedite motor accident compensation through dedicated fast-track benches and process reforms for 150,000 additional cases/yr. Rs 96,000+ crore in delayed compensation sits frozen in Indian courts; claimants are mostly two-wheeler riders and daily-wage earners.</p>
+      </div>
+      <div class="intervention-body">
+        <div class="ce-row">
+          <div class="ce-item">
+            <div class="ce-label">Raw $/DALY</div>
+            <div class="ce-val good">$42</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">Risk-Adjusted $/DALY</div>
+            <div class="ce-val ok">$238</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">DALYs/yr (modeled)</div>
+            <div class="ce-val">120K</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">P(success)</div>
+            <div class="ce-val">23%</div>
+          </div>
+        </div>
+        <div class="detail-row"><span class="icon">✓</span><span><strong>Strong equity case:</strong> MACT claimants are among the poorest litigants — accident victims and their families waiting years for insurance compensation they need now. Per-person health DALY impact is highest of all approaches.</span></div>
+        <div class="detail-row"><span class="icon">⚠</span><span><strong>Key risk:</strong> Insurance companies are financially incentivized to delay. Even fast judgments don't guarantee fast payment — enforcement of insurance awards has its own backlog.</span></div>
+        <div class="detail-row"><span class="icon">📍</span><span><strong>Best geography:</strong> Uttar Pradesh — highest road fatalities and largest MACT backlog.</span></div>
+      </div>
+    </div>
+
+    <!-- INTERVENTION 5: Land Disputes -->
+    <div class="intervention" style="margin-bottom:1.25rem;">
+      <div class="intervention-header">
+        <span class="badge badge-yellow">High Additionality · High Risk</span>
+        <h3 style="margin-top:0.5rem;">Land Dispute Resolution</h3>
+        <p>200 mediation centers and 50 dedicated land courts in 5 states to resolve 200K additional land cases/yr. 66% of all civil cases in India are land disputes (11M+ pending). Resolving land disputes unlocks property rights and credit access for rural poor.</p>
+      </div>
+      <div class="intervention-body">
+        <div class="ce-row">
+          <div class="ce-item">
+            <div class="ce-label">Raw $/DALY</div>
+            <div class="ce-val good">$32</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">Risk-Adjusted $/DALY</div>
+            <div class="ce-val ok">$272</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">Additionality</div>
+            <div class="ce-val">90%</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">P(success)</div>
+            <div class="ce-val hard">13%</div>
+          </div>
+        </div>
+        <div class="detail-row"><span class="icon">✓</span><span><strong>Highest additionality</strong> (89.8%) — almost no other funder is working on this. Bihar has a statutory framework (2009 Land Dispute Act) and digital RCMS portal that creates a foundation.</span></div>
+        <div class="detail-row"><span class="icon">⚠</span><span><strong>Lowest P(success):</strong> Land is politically charged. Powerful interests — landlords, political elites — benefit from disputed land status. Enforcement of land court decisions requires political will that is frequently absent.</span></div>
+        <div class="detail-row"><span class="icon">📍</span><span><strong>Best geography:</strong> Bihar (existing framework), then UP.</span></div>
+      </div>
+    </div>
+
+    <!-- INTERVENTION 6: Undertrial / Legal Aid -->
+    <div class="intervention" style="margin-bottom:1.25rem;">
+      <div class="intervention-header">
+        <span class="badge badge-blue">Strong equity case · Cleanest causal chain</span>
+        <h3 style="margin-top:0.5rem;">Undertrial Release (Legal Aid Paralegals + UTRC)</h3>
+        <p>Place trained paralegals in 164 major jails to identify eligible undertrials and prepare bail applications. Strengthen Under-Trial Review Committees to trigger mandatory case review under S.436A. The causal chain is unusually direct: identify a prisoner who qualifies for release → prepare application → they go home.</p>
+      </div>
+      <div class="intervention-body">
+        <div class="ce-row">
+          <div class="ce-item">
+            <div class="ce-label">Raw $/DALY</div>
+            <div class="ce-val ok">$125–146</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">Risk-Adjusted $/DALY</div>
+            <div class="ce-val ok">$514–874</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">DALYs/yr (modeled)</div>
+            <div class="ce-val">66K</div>
+          </div>
+          <div class="ce-item">
+            <div class="ce-label">Societal $/DALY</div>
+            <div class="ce-val good">Negative</div>
+          </div>
+        </div>
+        <div class="detail-row"><span class="icon">✓</span><span><strong>Societal cost is negative</strong> — releasing undertrials saves Rs 380/prisoner/day in prison costs, totaling ~$45M/yr in societal savings vs. $8M philanthropic spend. The intervention pays for itself in reduced prison expenditure.</span></div>
+        <div class="detail-row"><span class="icon">✓</span><span><strong>Evidence:</strong> NALSA UTRC data shows 74% bail grant rate when cases are properly identified (n=24,100). The bottleneck is identification, not the legal outcome.</span></div>
+        <div class="detail-row"><span class="icon">⚠</span><span><strong>Key risk:</strong> State prison department non-cooperation. The UTRC system has existed for 20 years with a 5% actual coverage rate despite Supreme Court mandates. Philanthropic coordination cannot overcome what SC orders have failed to.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTEC TABLE -->
+<section id="botec">
+  <div class="container">
+    <div class="section-label">BOTEC</div>
+    <h2>Full cost-effectiveness summary</h2>
+    <p class="section-intro">All figures are philanthropic dollars. "Risk-adjusted" accounts for P(success) and counterfactual additionality. "Your $/DALY" = what a funder actually buys. GiveWell top charities typically run $50–100/DALY.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Intervention</th>
+            <th>DALYs/yr (modeled)</th>
+            <th>Raw $/DALY</th>
+            <th>Achievable $/DALY</th>
+            <th>P(success)</th>
+            <th>Additionality</th>
+            <th>Risk-Adj $/DALY</th>
+            <th>Confidence</th>
+            <th>Best Geography</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td><strong>NI Act Digital Courts</strong></td>
+            <td class="num">151,000</td>
+            <td class="num">$8</td>
+            <td class="num">$5–6</td>
+            <td class="num">22%</td>
+            <td class="num">85%</td>
+            <td class="num"><strong>$40</strong></td>
+            <td><span class="badge badge-yellow">Medium</span></td>
+            <td>Kerala → Karnataka → MH</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>Lok Adalat + Case Mgmt</strong></td>
+            <td class="num">165,000</td>
+            <td class="num">$25</td>
+            <td class="num">$17</td>
+            <td class="num">39%</td>
+            <td class="num">75%</td>
+            <td class="num"><strong>$87</strong></td>
+            <td><span class="badge badge-yellow">Medium</span></td>
+            <td>National via NALSA</td>
+          </tr>
+          <tr>
+            <td>MACT Fast-tracking</td>
+            <td class="num">120,000</td>
+            <td class="num">$42</td>
+            <td class="num">$19</td>
+            <td class="num">23%</td>
+            <td class="num">77%</td>
+            <td class="num">$238</td>
+            <td><span class="badge badge-yellow">Medium</span></td>
+            <td>Uttar Pradesh</td>
+          </tr>
+          <tr>
+            <td>Court Manager Program</td>
+            <td class="num">389,000</td>
+            <td class="num">$77</td>
+            <td class="num">$59</td>
+            <td class="num">32%</td>
+            <td class="num">84%</td>
+            <td class="num">$292</td>
+            <td><span class="badge badge-yellow">Medium</span></td>
+            <td>MH, Karnataka, Delhi</td>
+          </tr>
+          <tr>
+            <td>Land Dispute Resolution</td>
+            <td class="num">216,000</td>
+            <td class="num">$32</td>
+            <td class="num">$21</td>
+            <td class="num">13%</td>
+            <td class="num">90%</td>
+            <td class="num">$272</td>
+            <td><span class="badge badge-red">Low–Med</span></td>
+            <td>Bihar</td>
+          </tr>
+          <tr>
+            <td>ODR Private Platforms</td>
+            <td class="num">117,000</td>
+            <td class="num">$85</td>
+            <td class="num">$22</td>
+            <td class="num">33%</td>
+            <td class="num">76%</td>
+            <td class="num">$340</td>
+            <td><span class="badge badge-yellow">Medium</span></td>
+            <td>Maharashtra</td>
+          </tr>
+          <tr>
+            <td>Legal Aid / Undertrial</td>
+            <td class="num">66,000</td>
+            <td class="num">$125</td>
+            <td class="num">$50</td>
+            <td class="num">20–34%</td>
+            <td class="num">81–86%</td>
+            <td class="num">$514–874</td>
+            <td><span class="badge badge-yellow">Medium</span></td>
+            <td>UP, Bihar, MH</td>
+          </tr>
+          <tr>
+            <td>Scheduling Reform (courts)</td>
+            <td class="num">65,000</td>
+            <td class="num">$91</td>
+            <td class="num">$50–60</td>
+            <td class="num">6–10%</td>
+            <td class="num">85%</td>
+            <td class="num">$816–1,776</td>
+            <td><span class="badge badge-red">Low–Med</span></td>
+            <td>Delhi, Mumbai, Bengaluru</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout" style="margin-top:2rem;">
+      <strong>How to read these numbers</strong>
+      Raw $/DALY is what the math says if the intervention fully succeeds. Risk-adjusted $/DALY divides by P(success) and by additionality — it is the expected cost per DALY actually attributable to the funder, accounting for implementation risk and what would have happened anyway. GiveWell's bar is roughly $50–100/DALY. These numbers put NI Act digital courts in a highly competitive range even risk-adjusted ($40), and Lok Adalat drives solidly cost-effective ($87).
+    </div>
+
+    <h3 style="margin: 2.5rem 0 1rem; font-size:1.05rem;">How DALYs are generated — the causal chain</h3>
+    <p style="color:var(--muted); font-size:0.9rem; margin-bottom:1.5rem;">Court reform DALYs come through income gains (DCYs — Doubled Consumption Years), not direct health. This creates a longer causal chain than health interventions, which contributes to uncertainty.</p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Step 1: Case resolved faster</h3>
+        <p>An NI Act case settled in 5 months vs. 3–7 years. Complainant recovers ~Rs 1.93 lakh in settlement. Both parties avoid ~32 adjournments × Rs 13,000/case in costs and lost wages = Rs 4.2 lakh in avoided total burden.</p>
+      </div>
+      <div class="card">
+        <h3>Step 2: Income gain → DCY</h3>
+        <p>We count the net financial benefit to the poorer party. At Rs 300K/yr income and Rs 88,600 net gain, this equals 0.29 DCYs. We convert at 2.5 DCYs → 1 DALY, following GiveWell's consumption-doubling framework. This weights gains more heavily for poorer recipients.</p>
+      </div>
+      <div class="card">
+        <h3>Step 3: Scale → total DALYs</h3>
+        <p>At 600K NI Act cases settled/yr × 28% settlement rate × 70% compliance × 0.192 DCYs/case ÷ 2.5 = 22,793–56,983 DALYs/yr per approach. Add undertrial release health DALYs directly (disability weight 0.15 × days freed).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-label">Recommended Portfolio</div>
+    <h2>The Ajay Shah / XKDR Forum angle</h2>
+    <p class="section-intro">The biggest single driver of uncertainty in court reform is not whether the technology works — it is whether it gets adopted at scale. One person's relationships change the math fundamentally.</p>
+
+    <div class="callout good" style="margin-bottom:2.5rem;">
+      <strong>Why the implementing partner matters more than the intervention design</strong>
+      Ajay Shah (XKDR Forum) has direct working relationships with the SC e-Committee, Ministry of Law and Justice, NALSA, and key High Court Chief Justices — particularly Maharashtra, Delhi, and Karnataka. These are the exact three veto points that have blocked every previous reform. A philanthropic funder working through this channel has roughly 3× higher P(success) than a generic entrant. That halves the risk-adjusted $/DALY across the entire portfolio.
+    </div>
+
+    <div class="grid-2" style="margin-bottom:2rem;">
+      <div>
+        <h3 style="margin-bottom:1rem; font-size:1rem;">P(success) with vs. without Ajay Shah</h3>
+        <div class="prob-table">
+          <div class="prob-row">
+            <div class="prob-label">Pilot succeeds (generic funder)</div>
+            <div class="prob-bar-wrap"><div class="prob-bar"><div class="prob-bar-fill" style="width:60%; background:#e5e7eb;"></div></div></div>
+            <div class="prob-num" style="color:var(--muted)">60%</div>
+          </div>
+          <div class="prob-row">
+            <div class="prob-label">Pilot succeeds (with Ajay)</div>
+            <div class="prob-bar-wrap"><div class="prob-bar"><div class="prob-bar-fill" style="width:75%;"></div></div></div>
+            <div class="prob-num">75%</div>
+          </div>
+          <div class="prob-row">
+            <div class="prob-label">Scales after pilot (generic)</div>
+            <div class="prob-bar-wrap"><div class="prob-bar"><div class="prob-bar-fill" style="width:35%; background:#e5e7eb;"></div></div></div>
+            <div class="prob-num" style="color:var(--muted)">35%</div>
+          </div>
+          <div class="prob-row">
+            <div class="prob-label">Scales after pilot (with Ajay)</div>
+            <div class="prob-bar-wrap"><div class="prob-bar"><div class="prob-bar-fill" style="width:65%;"></div></div></div>
+            <div class="prob-num">65–70%</div>
+          </div>
+          <div class="prob-row">
+            <div class="prob-label">Overall P(success) — generic</div>
+            <div class="prob-bar-wrap"><div class="prob-bar"><div class="prob-bar-fill" style="width:10%; background:#e5e7eb;"></div></div></div>
+            <div class="prob-num" style="color:var(--muted)">~10%</div>
+          </div>
+          <div class="prob-row">
+            <div class="prob-label">Overall P(success) — with Ajay</div>
+            <div class="prob-bar-wrap"><div class="prob-bar"><div class="prob-bar-fill" style="width:29%;"></div></div></div>
+            <div class="prob-num"><strong>~29–31%</strong></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem; font-size:1rem;">Recommended phased portfolio</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="meta">Phase 1 · Years 1–2 · $8–10M</div>
+            <h4>Pilot: Kerala + Maharashtra</h4>
+            <p>10 NI Act digital courts in Kerala (expanding Kollam model) + 50 Lok Adalat NI Act drives in Maharashtra + analytics platform build. Ajay Shah leads government engagement. Clear 18-month decision gate: did settlement rate hit targets? Did bar stay quiet?</p>
+          </div>
+          <div class="timeline-item">
+            <div class="meta">Phase 2 · Years 3–5 · $20–30M</div>
+            <h4>Regional scale: 6 states</h4>
+            <p>Expand NI Act courts to Karnataka, Delhi, Gujarat. Scale Lok Adalat drives to UP, Bihar (using NALSA infrastructure). Begin MACT fast-track in UP. Decision gate: does SC e-Committee issue a national NI Act ODR directive?</p>
+          </div>
+          <div class="timeline-item">
+            <div class="meta">Phase 3 · Years 6–10 · $50–70M</div>
+            <h4>National + government transition</h4>
+            <p>Government adoption of proven models. Philanthropy shifts to technical assistance, analytics, and quality assurance. Add court manager program where HC absorption is demonstrated. Land dispute mediation in Bihar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin: 2rem 0 1rem; font-size:1rem;">Scenario analysis</h3>
+    <div class="grid-3">
+      <div class="card" style="border-color: var(--green); border-top: 3px solid var(--green);">
+        <h3 style="color:var(--green);">Optimistic scenario</h3>
+        <p style="margin-bottom:0.75rem; font-size:0.85rem;">SC e-Committee issues national NI Act ODR directive. NALSA circular mandates mediation-first. Bar associations in Kerala/Karnataka do not oppose. Ajay Shah's relationships fully convert into institutional action.</p>
+        <p style="font-size:0.85rem;"><strong>$/DALY:</strong> $7–25 risk-adjusted across portfolio</p>
+      </div>
+      <div class="card" style="border-color: var(--yellow); border-top: 3px solid var(--yellow);">
+        <h3 style="color:var(--yellow);">Base scenario</h3>
+        <p style="margin-bottom:0.75rem; font-size:0.85rem;">NI Act courts succeed in Kerala + Karnataka. Lok Adalat drives show measurable settlement improvement. Expansion to 3–4 states. No national SC mandate. Bar associations passive but not supportive.</p>
+        <p style="font-size:0.85rem;"><strong>$/DALY:</strong> $40–87 risk-adjusted (NI Act + Lok Adalat)</p>
+      </div>
+      <div class="card" style="border-color: var(--red); border-top: 3px solid var(--red);">
+        <h3 style="color:var(--red);">Pessimistic scenario</h3>
+        <p style="margin-bottom:0.75rem; font-size:0.85rem;">Bar associations in Maharashtra or UP actively oppose NI Act courts as precedent. State governments don't absorb court managers. Lok Adalat compliance rates are 20% not 70%. Technology deploys; behavior doesn't change.</p>
+        <p style="font-size:0.85rem;"><strong>$/DALY:</strong> $378–2,746 (above GiveWell bar; still below WHO India threshold of $2,800)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCE -->
+<section id="evidence">
+  <div class="container">
+    <div class="section-label">Evidence Base</div>
+    <h2>What the research actually shows</h2>
+    <p class="section-intro">No RCT evidence exists for any Indian court modernization intervention. The case rests on quasi-experimental studies, administrative data, and careful analogies.</p>
+
+    <div class="grid-2">
+      <div>
+        <h3 style="margin-bottom:1rem; font-size:1rem;">Strongest evidence</h3>
+        <div class="evidence-item">
+          <h4>Visaria 2009 — Debt Recovery Tribunals (AEJ: Applied)</h4>
+          <p>Diff-in-diff on DRT introduction. Loan delinquency reduced by 28%. Interest rates fell. Strongest causal evidence of any Indian judicial reform on economic outcomes. The DRT model (specialized courts for a specific case type) is the direct analogue for NI Act courts.</p>
+          <span class="badge badge-green">HIGH confidence</span>
+        </div>
+        <div class="evidence-item">
+          <h4>Chemin 2020 — Comprehensive reform → firm productivity (REStat)</h4>
+          <p>Triple-diff across 19 Indian states and multiple reform episodes. Comprehensive judicial reforms → 22% firm productivity gain. Critical finding: partial reforms show zero effect — the threshold for impact requires genuine comprehensiveness.</p>
+          <span class="badge badge-yellow">MEDIUM confidence</span>
+        </div>
+        <div class="evidence-item">
+          <h4>Rao 2024 — Additional judges → credit expansion (SSRN)</h4>
+          <p>Court-level panel data, all India. Each additional judge generates 10–20% bank lending increase and 30× salary in economic returns. Direct evidence that judicial capacity has quantifiable macro effects.</p>
+          <span class="badge badge-yellow">MEDIUM confidence</span>
+        </div>
+        <div class="evidence-item">
+          <h4>DAKSH Access to Justice Survey 2016 (n=9,000, 24 states)</h4>
+          <p>The only nationally representative litigant cost survey in India. Rs 1,746/day in direct + opportunity costs (inflation-adjusted: Rs 2,844/day in 2026). Underpins all DALY calculations involving litigant time savings.</p>
+          <span class="badge badge-green">HIGH confidence</span>
+        </div>
+        <div class="evidence-item">
+          <h4>Philippines IPA RCT — Continuous trial reform</h4>
+          <p>Quasi-experimental evaluation. 10–14% case duration reduction from continuous trial (no unnecessary adjournments) in criminal courts. The only RCT-adjacent evidence for scheduling reform that is directly applicable to India.</p>
+          <span class="badge badge-yellow">MEDIUM confidence</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem; font-size:1rem;">Key empirical data points</h3>
+        <div class="evidence-item">
+          <h4>Kollam ON Court pilot (Godrej Foundation / Agami, 2025–26)</h4>
+          <p>843 NI Act cases filed in Kollam digital court. Median disposal: 150–180 days vs. 609-day baseline. Only 19% of baseline hearings were substantive — 81% were procedural waste. The most important live pilot evidence.</p>
+          <span class="badge badge-green">HIGH confidence</span>
+        </div>
+        <div class="evidence-item">
+          <h4>Special Lok Adalat dataset — 13,531 NI Act cases (2026)</h4>
+          <p>Three statewide Special Lok Adalats (Haryana: 9,590 cases, MP: 1,945 cases, Chhattisgarh: 1,996 cases). Weighted average settlement amount: Rs 1.93 lakh. Settlement rate: 21–42%, weighted average ~28%. First large-N empirical data on NI Act settlement amounts.</p>
+          <span class="badge badge-yellow">MEDIUM confidence</span>
+        </div>
+        <div class="evidence-item">
+          <h4>Commercial Courts Act — duration data</h4>
+          <p>Commercial courts in major metros achieved 1,445 → 626 days case duration after 3-adjournment enforcement. 57% reduction — but only in best-case urban settings with motivated HC leadership. 34% of targeted courts actually meet benchmarks nationally.</p>
+          <span class="badge badge-yellow">MEDIUM confidence</span>
+        </div>
+        <div class="evidence-item">
+          <h4>NALSA UTRC administrative data (n=24,100)</h4>
+          <p>74% bail grant rate when undertrial cases are properly identified by UTRC. The bottleneck is identification and presentation, not judicial decision-making. Key input for legal aid paralegal design.</p>
+          <span class="badge badge-yellow">MEDIUM-HIGH confidence</span>
+        </div>
+        <h3 style="margin-top:1.5rem; margin-bottom:0.75rem; font-size:1rem;">Critical evidence gaps</h3>
+        <div class="callout warning">
+          <strong>No RCT evidence exists</strong>
+          This is the most significant limitation. No court modernization intervention in India has been evaluated with a randomized or quasi-experimental design with pre-specified outcome measures. The entire analysis is based on before-after data, administrative records, and cross-national analogies. P(success) estimates carry substantial uncertainty.
+        </div>
+        <ul style="font-size:0.875rem; color:var(--muted); margin-top:1rem; line-height:1.8; padding-left:1.25rem;">
+          <li>No post-settlement compliance data for NI Act Lok Adalat awards</li>
+          <li>No GBD disability weight for incarceration (we use 0.15 by analogy)</li>
+          <li>No survey of NI Act complainant income distribution</li>
+          <li>Kollam has 1-year data from 1 court — insufficient for confidence in scale-up</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section id="methodology">
+  <div class="container">
+    <div class="section-label">Methodology</div>
+    <h2>How the BOTECs work</h2>
+    <p class="section-intro">All numbers are Fermi estimates designed to be transparent and challengeable. The goal is calibrated uncertainty, not false precision.</p>
+
+    <div class="grid-2">
+      <div>
+        <h3 style="margin-bottom:1rem; font-size:1rem;">From case resolution to DALYs</h3>
+        <p style="font-size:0.875rem; color:var(--muted); margin-bottom:1rem;">Court reform DALYs flow through income gains, not direct health effects. The chain:</p>
+        <div class="card" style="font-size:0.875rem; line-height:1.8; margin-bottom:0.75rem;">
+          <strong>NI Act Digital Courts — worked example:</strong><br>
+          600K cases/yr reached<br>
+          × 28% settlement rate = 168K settled<br>
+          × 70% compliance = 117.6K paid<br>
+          × 65% individual fraction = 76K individuals<br>
+          × Rs 88,600 net gain/case<br>
+          ÷ Rs 300,000 annual income<br>
+          = <strong>0.29 DCYs/case → 22,400 DCYs/yr → 8,960 DALYs/yr</strong><br>
+          At $19M/yr cost → <strong>$2,120/DALY raw</strong><br>
+          <em>(This is the Lok Adalat ODR variant — the dedicated court approach yields higher DALYs through case duration reduction)</em>
+        </div>
+        <p style="font-size:0.875rem; color:var(--muted);">We follow GiveWell's DCY framework: 1 DALY = 2.5 DCYs (doubling consumption for 2.5 years). This weights gains more heavily for lower-income recipients and allows comparison with global health benchmarks.</p>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem; font-size:1rem;">Key parameters and sensitivity</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Parameter</th><th>Base Value</th><th>Range</th><th>Confidence</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>NI Act complainant income</td><td class="num">Rs 300K/yr</td><td class="num">200–400K</td><td><span class="badge badge-yellow">Medium</span></td></tr>
+              <tr><td>Lok Adalat settlement rate</td><td class="num">28%</td><td class="num">21–42%</td><td><span class="badge badge-yellow">Medium</span></td></tr>
+              <tr><td>Post-settlement compliance</td><td class="num">70%</td><td class="num">20–90%</td><td><span class="badge badge-red">Low</span></td></tr>
+              <tr><td>Avg claim value (NI Act)</td><td class="num">Rs 1.93L</td><td class="num">1–5L</td><td><span class="badge badge-yellow">Medium</span></td></tr>
+              <tr><td>NI Act target duration (digital court)</td><td class="num">240 days</td><td class="num">150–300</td><td><span class="badge badge-yellow">Medium</span></td></tr>
+              <tr><td>GDP cost of judicial delay</td><td class="num">1.0–1.5% GDP</td><td class="num">0.5–2.0%</td><td><span class="badge badge-yellow">Medium</span></td></tr>
+              <tr><td>DCY → DALY conversion</td><td class="num">2.5 DCY = 1 DALY</td><td class="num">1.5–4x</td><td><span class="badge badge-green">GiveWell standard</span></td></tr>
+              <tr><td>P(success) NI Act courts</td><td class="num">22%</td><td class="num">10–40%</td><td><span class="badge badge-red">Low–Med</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.8rem; color:var(--muted); margin-top:0.75rem;">Post-settlement compliance and P(success) are the dominant drivers of uncertainty. The tornado analysis shows that halving compliance from 70% to 35% roughly doubles $/DALY. Getting empirical compliance data from existing Lok Adalat award enforcement is the single highest-value research investment.</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:2rem;">
+      <strong>Bottom line on uncertainty</strong>
+      The pessimistic scenario ($378–2,746/DALY risk-adjusted for the full portfolio) still clears the WHO threshold for cost-effectiveness in India ($2,800/DALY). The base case ($40–87/DALY for the two lead interventions) is competitive with GiveWell top charities. The central question is not whether this is cost-effective — under almost all scenarios it clears the threshold — but whether the implementation risks can be managed. That is almost entirely a function of the implementing partner and their government relationships.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>India Court Modernization — Philanthropic Evidence Review<br>9 deep research runs · ~200 sources · August 2026</div>
+    <div style="text-align:right;">Based on work by XKDR Forum / Ajay Shah<br>DAKSH · NJDG · NALSA · Kollam ON Court</div>
+  </div>
+</footer>
+
+<script>
+  // Active nav on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(l => {
+          l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
